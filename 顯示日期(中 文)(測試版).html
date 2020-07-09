@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
+  <title>jQuery UI 日期选择器（Datepicker） - 默认功能</title>
+  <style type="text/css"> 
+    body{ text-align: center; background: #00ECB9; font-family: sans-serif; font-weight: 100; } 
+    h1{ color: #396; font-weight: 100; font-size: 40px; margin: 40px 0px 20px; }
+     #clockdiv{ font-family: sans-serif; color: #fff; display: inline-block; font-weight: 100; text-align: center; font-size: 30px; } 
+     #clockdiv > div{ padding: 10px; border-radius: 3px; background: #00BF96; display: inline-block; } 
+     #clockdiv div > span{ padding: 15px; border-radius: 3px; background: #00816A; display: inline-block; } 
+     .smalltext{ padding-top: 5px; font-size: 16px; } 
+
+     .btn_clear {
+    display: none;
+    }
+
+   * {
+margin: 0;
+padding: 0;
+}
+.title {
+font-size: 24px;
+font-weight: bold;
+width: 400px;
+height: 70px;
+margin: 0 auto;
+padding-top: 30px;
+text-align: center;
+color: #f00;
+}
+.btns {
+width: 190px;
+height: 30px;
+margin: 0 auto;
+}
+.btns span {
+font-family: '微軟雅黑';
+font-size: 14px;
+line-height: 27px;
+display: block;
+float: left;
+width: 80px;
+height: 27px;
+margin-right: 10px;
+cursor: pointer;
+text-align: center;
+color: #fff;
+border: 1px solid #eee;
+border-radius: 7px;
+background: #036;
+}
+</style>
+</head>
+
+  <link rel="stylesheet" href= "CSS/顯示日期-ui.css">
+  <script src="JS/顯示日期.js"></script>
+  <script src="JS/顯示日期-ui.js"></script>
+  <link rel="stylesheet" href= "CSS/顯示日期style.css">
+  <script>
+    
+      //設定中文語系
+$.datepicker.regional['zh-TW']={
+   dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+   dayNamesMin:["日","一","二","三","四","五","六"],
+   monthNames:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+   monthNamesShort:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+   prevText:"上月",
+   nextText:"下月",
+   weekHeader:"週"
+};
+//將預設語系設定為中文
+$.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+
+
+  
+  
+  </script>
+
+<body>
+  <h1>金龍印章抽獎倒數</h1> 
+    <div id="clockdiv"> 
+        <div> 
+    <span class="days"></span> 
+    <div class="smalltext">天</div> 
+    </div> 
+    <div> 
+    <span class="hours"></span> 
+    <div class="smalltext">小時</div> 
+     </div> 
+    <div>
+    <span class="minutes"></span> 
+    <div class="smalltext">分鐘</div> 
+    </div> 
+    <div> 
+    <span class="seconds"></span> 
+    <div class="smalltext">秒</div>
+    </div> 
+<p>日期：<input type="text" id="datepicker"   name='gtname' maxlength="10" size = "10"><br>時間:
+  <span class="phone-field"> 
+  <input type="text" size='2' id="Shours" maxlength="2"  autofocus="autofocus"  class ="clock-input">:
+  <input type="text" size='2' id="Sminutes" maxlength="2"  class ="clock-input" >
+  <button 
+    type="submit" 
+    id="click" 
+    onclick="this.disabled = true;
+    document.getElementById('clear').disabled = false;
+    document.getElementById('datepicker').disabled = true;
+    document.getElementById('Shours').disabled = true;
+    document.getElementById('Sminutes').disabled = true;
+    initializeClock('clockdiv',v2.value);checkhours(); myfunction();checkminutes();"
+    >
+    確定
+    </button> 
+  <button 
+    type="submit" 
+    id="clear" 
+    onclick="this.disabled = true;  
+    document.getElementById('click').disabled = false; 
+    document.getElementById('datepicker').disabled = false;
+    document.getElementById('Shours').disabled = false;
+    document.getElementById('Sminutes').disabled = false;
+    stop()"
+    >
+    取消
+    </button>
+<br/>
+ 
+<span id="custom">
+  <span class="wrap_input">
+    <input type="text"  id ="1" >
+    <button class="btn_clear1"  onclick="" >清除</button>
+    <button class="btn_check1" id = "S" onclick="F();">確定</button>
+</span>
+
+
+<div id="title" class="title">開始抽獎啦！</div>
+<div class="btns">
+<span id="play">開 始</span>
+<span id="stop">停 止</span>
+
+<script type="text/javascript">
+
+const shours = document.getElementById('Shours');//使用者輸入小時
+const Sminutes = document.getElementById('Sminutes');//使月者輸入分鐘
+
+function getTimeRemaining(endtime) { //倒數日期計算
+  const sh = (shours.value)*60*60*1000;
+  const sm = (Sminutes.value)*60*1000;
+  const total = ( Date.parse(endtime)- Date.parse(new Date()))+sh+sm;//輸入日期-當前日期   (豪秒數)
+  const seconds = Math.floor((total / 1000) % 60); 
+  const minutes = Math.floor((total / 1000 / 60) % 60); 
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24); 
+  const days = Math.floor(total / (1000 * 60 * 60 * 24)); 
+  return { total, days, hours, minutes, seconds };
+  } 
+//////////////////////////
+  function checkhours(){  //輸入小時判斷式
+    if(   shours.value > 23  ||shours.value < 0){ //<0, >23
+    alert("請輸入0~23小時");
+    stop();
+  }else{
+    let r = /^[0-9]*[1-9][0-9]*$/;
+    if (!r.test(shours.value) 
+    && shours.value != 0  //0的判斷
+    ||shours.value == "-0"
+    ||shours.value =="+0"
+    ||shours.value == ".0"
+    ||shours.value =="0."  ){
+      alert("時間格式錯誤! 請輸入 0~23 小時");
+      stop();
+    }  
+  }
+}
+
+function checkminutes(){  //輸入分鐘判斷式
+    if(   Sminutes.value < 0|| Sminutes.value > 59 ){  //<0 ,>59 
+    alert("請輸入0~59分鐘");
+    stop();
+  }else{
+    let r =/^[0-9]*[1-9][0-9]*$/;
+    if (!r.test(Sminutes.value)
+    &&Sminutes.value != 00   //0的判斷
+    ||Sminutes.value == "-0"
+    ||Sminutes.value =="+0"
+    ||Sminutes.value == ".0"
+    ||Sminutes.value =="0." ) {
+      alert("分鐘格式錯誤! 請輸入 0~59 分鐘");
+      stop();
+      }
+    }
+  }
+//////////////////
+
+  function initializeClock(id, endtime) {  //顯示倒數
+  const clock = document.getElementById(id); 
+  const daysSpan = clock.querySelector('.days'); 
+  const hoursSpan = clock.querySelector('.hours'); 
+  const minutesSpan = clock.querySelector('.minutes'); 
+  const secondsSpan = clock.querySelector('.seconds'); 
+  function updateClock() { 
+  const t = getTimeRemaining(endtime);      
+      daysSpan.innerHTML = ('0' + t.days).slice(-2);    //前導零
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2); 
+     
+  if (t.total == 0) {  //倒數完0 停止
+      clearInterval(timeinterval); 
+      }
+  } 
+  updateClock(); 
+   timeinterval = setInterval(updateClock, 1000);
+}  
+//////////////////////
+function stop(){      //清除函式
+   clearInterval(timeinterval); 
+ 
+  var clock = document.getElementById("clockdiv"); 
+  var daysSpan = clock.querySelector('.days'); 
+  var hoursSpan = clock.querySelector('.hours'); 
+  var minutesSpan = clock.querySelector('.minutes'); 
+  var secondsSpan = clock.querySelector('.seconds'); 
+
+      daysSpan.innerHTML = "00";
+      hoursSpan.innerHTML = "00";
+      minutesSpan.innerHTML ="00";
+      secondsSpan.innerHTML = "00";
+}
+ const v2 = document.getElementById('datepicker');//獲得text日期
+ function myfunction(){  //過去日期判斷式
+  const sh = (shours.value)*60*60*1000;  
+  const sm = (Sminutes.value)*60*1000;
+  const y =  (Date.parse(v2.value)+sh+sm)- Date.parse(new Date()); //從當天0時算起 EX:6/12 00:00:00
+  if(y < 0) {
+        alert("不可輸入過去日期");
+        stop();
+      }
+ }
+
+var field = $('.phone-field');//自動換行輸入
+field.on('keyup', 'input.clock-input', function(e) {
+  var key = e.keyCode || e.charCode;
+  var inputs = $('input.clock-input');
+  if ($(this).val().length === this.size) {
+    inputs.eq(inputs.index(this) + 1).focus();
+  }
+  if ((key === 8 || key === 46) && $(this).val().length === 0) {
+    var indexNum = inputs.index(this);
+    if (indexNum != 0) {
+      inputs.eq(inputs.index(this) - 1).focus();
+    }
+  }
+});
+///////////////增加項目系統
+var first = document.getElementById("1");
+
+function F(){
+
+      data.push(first.value);
+       console.log(data);    
+}
+function G(){
+
+  var E = data.indexOf(first.value);
+  if (E > -1) {
+        data.splice(E, 1);
+        console.log(data);
+      } 
+     E.innerHTML = " ";  
+}
+var counter = 1,
+
+
+  custom = $('#custom');
+$(function() {
+  $('#S').click(function() {
+      var T = first.value;
+    counter += 1;
+    const newRow = $('<p class="row' + counter + '" id = "'+ counter +'" ><button class="remove-text-box">X</button>'+ T +'</p>');
+    custom.append(newRow);
+    (function(index) {
+      newRow.find('.remove-text-box').click(function() {
+        var DX =data.indexOf(T);
+        if (DX > -1) {
+        data.splice(DX, 1);
+        console.log(data);
+        }
+        custom.find('.row' + index).remove();
+          }); 
+
+        newRow.find('.btn_check1').click(function() {
+       var x =  custom.find('#' + index).val(); 
+       data.push(x);
+       console.log(data);
+      });
+      newRow.find('.btn_clear').click(function() {
+        var CX =data.indexOf(custom.find('.inp_' + index).val());
+      if (CX > -1) {
+        data.splice(CX, 1);
+        console.log(data);
+      }
+      $('#' + index).attr('disabled', false);
+      $('.inp_' +index).attr('disabled', false);
+      });   
+      
+  })(counter);
+  });
+});
+
+
+// clear input value 
+
+$(document).on("input", "input", function() {
+  $(this).next(".btn_clear").toggle(!!this.value);
+});
+$(document).on("touchstart click", ".btn_clear", function(e) {
+  e.preventDefault();//取消事件
+  $(this).prev("input").val("").trigger("input").focus();
+});
+
+$(document).on("touchstart click", ".btn_clear1", function(e) {
+  e.preventDefault();//取消事件
+  $(this).prev("input").val("").trigger("input").focus();
+});
+
+/*$( document ).ready(function() {
+ $('input[id^="exception_"]').on('click', function() {  
+    alert(this.value);
+ });
+})*/
+
+
+
+ ////////////////////抽獎系統
+ var data = [];
+timer = null, //定時器
+flag = 0; //用於鍵盤事件狀態標記
+window.onload = function() {
+var play = document.getElementById('play'),
+stop = document.getElementById('stop');
+// 開始抽獎
+play.onclick = playFun;
+stop.onclick = stopFun;
+// 鍵盤事件
+document.onkeyup = function(event) {
+event = event || window.event;
+if (event.keyCode == 13) {
+if (flag == 0) {
+playFun();
+flag = 1;
+} else {
+stopFun();
+flag = 0;
+}
+}
+}
+}
+// 開始抽獎
+function playFun() {
+var title = document.getElementById('title');
+var play = document.getElementById('play');
+//每次都先清除上一次的定時器任務，避免抽獎效果累加頻率會越來越快
+clearTimeout(timer);
+timer = setTimeout(function() {
+var random = Math.floor(Math.random() * data.length);
+title.innerHTML = data[random];
+}, 1000);
+play.style.background = '#999';
+}
+//停止抽獎
+function stopFun() {
+  clearTimeout(timer);
+var play = document.getElementById('play');
+play.style.background = '#036';
+}
+</script> 
+
+</body>
+</html>
+
