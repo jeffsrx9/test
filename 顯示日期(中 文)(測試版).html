@@ -376,11 +376,14 @@ function deleteCookie(name, path)
 {
   setCookie(name, '', -1, path)
 }
+var value =data.join(',');
+document.cookie = 'key=' + value;
+
 function checkCookie() {
   var userdate=getCookie('date');
   var userhour = getCookie('hour');
   var userminute = getCookie('minute');
-  
+ 
   if (userdate != "") {
 
     document.getElementById('clear').disabled = false;
