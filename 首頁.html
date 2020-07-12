@@ -29,15 +29,10 @@ const deleteCookie = (name, path) => {
   setCookie(name, '', -1, path)
 }
 function checkCookie() {
-  var user=getCookie("username");
+  var user=getCookie("b");
   if (user != "") {
     alert("再次欢迎您，" + user);
-  } else {
-     user = prompt("请输入姓名：","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-  }
+  } 
 }
     </script>
 </body>
