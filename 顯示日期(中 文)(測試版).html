@@ -380,7 +380,7 @@ function deleteCookie(name, path)
   setCookie(name, '', -1, path)
 }
 function checkCookie() {
-  var user=getCookie('date');
+  const user=getCookie('date');
   if (user != "") {
 
     document.getElementById('clear').disabled = false;
