@@ -382,11 +382,7 @@ function deleteCookie(name, path)
 function checkCookie() {
   var user=getCookie("date");
   if (user != "") {
-    document.getElementById('clear').disabled = false;
-    document.getElementById('datepicker').disabled = true;
-    document.getElementById('Shours').disabled = true;
-    document.getElementById('Sminutes').disabled = true;
-    initializeClock('clockdiv',user);checkhours(); myfunction();checkminutes();
+    alert(user);
   } 
 }
 
