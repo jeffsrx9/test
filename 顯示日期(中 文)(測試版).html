@@ -133,7 +133,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
  
 <span id="custom">
   <span class="wrap_input">
-    <input type="text"  id ="1" >
+    <input type="text" class = "cl" id ="1" >
     <button class="btn_clear1"  onclick="" >清除</button>
     <button class="btn_check1" id = "S" onclick="F();">確定</button>
 </span>
@@ -212,6 +212,7 @@ function checkminutes(){  //輸入分鐘判斷式
      
   if (t.total == 0) {  //倒數完0 停止
       clearInterval(timeinterval); 
+      playFun();
       }
   } 
   updateClock(); 
@@ -233,6 +234,9 @@ function stop(){      //清除函式
       secondsSpan.innerHTML = "00";
 }
  const v2 = document.getElementById('datepicker');//獲得text日期
+
+
+
  function myfunction(){  //過去日期判斷式
   const sh = (shours.value)*60*60*1000;  
   const sm = (Sminutes.value)*60*1000;
@@ -258,82 +262,53 @@ field.on('keyup', 'input.clock-input', function(e) {
   }
 });
 ///////////////增加項目系統
-var first = document.getElementById("1");
 
-function F(){
+const first2 = document.getElementById("1");
 
-      data.push(first.value);
-       console.log(data);    
+function F(){     
+       data.push(first2.value);
+       console.log(data);
 }
-function G(){
 
-  var E = data.indexOf(first.value);
-  if (E > -1) {
-        data.splice(E, 1);
-        console.log(data);
-      } 
-     E.innerHTML = " ";  
-}
-var counter = 1,
+var counter = 1;
 
 
   custom = $('#custom');
-$(function() {
-  $('#S').click(function() {
-      var T = first.value;
-    counter += 1;
-    const newRow = $('<p class="row' + counter + '" id = "'+ counter +'" ><button class="remove-text-box">X</button>'+ T +'</p>');
-    custom.append(newRow);
-    (function(index) {
-      newRow.find('.remove-text-box').click(function() {
-        var DX =data.indexOf(T);
-        if (DX > -1) {
-        data.splice(DX, 1);
-        console.log(data);
-        }
-        custom.find('.row' + index).remove();
-          }); 
-
-        newRow.find('.btn_check1').click(function() {
-       var x =  custom.find('#' + index).val(); 
-       data.push(x);
-       console.log(data);
-      });
-      newRow.find('.btn_clear').click(function() {
-        var CX =data.indexOf(custom.find('.inp_' + index).val());
-      if (CX > -1) {
-        data.splice(CX, 1);
-        console.log(data);
+$(function () {
+  $('#S').click(function () {
+    
+    let T = first2.value;
+  counter += 1;
+  const newRow = $('<p class="row' + counter + '" id = "'+ counter +'" ><button class="remove-text-box">X</button>'+ T +'</p>');
+  custom.append(newRow);
+  (function(index) {
+    newRow.find('.remove-text-box').click(function() {
+      var DX =data.indexOf(T);
+      if (DX > -1) {
+      data.splice(DX, 1);
+      console.log(data);
       }
-      $('#' + index).attr('disabled', false);
-      $('.inp_' +index).attr('disabled', false);
-      });   
-      
-  })(counter);
-  });
+      custom.find('.row' + index).remove();
+      $(".cl").focus();
+        }); 
+
+      newRow.find('.btn_check1').click(function() {
+     var x =  custom.find('#' + index).val(); 
+     data.push(x);
+     console.log(data);
+    });    
+  $(".cl").val("").focus();
+})(counter);
+});
 });
 
 
 // clear input value 
-
-$(document).on("input", "input", function() {
-  $(this).next(".btn_clear").toggle(!!this.value);
-});
-$(document).on("touchstart click", ".btn_clear", function(e) {
-  e.preventDefault();//取消事件
-  $(this).prev("input").val("").trigger("input").focus();
-});
-
 $(document).on("touchstart click", ".btn_clear1", function(e) {
   e.preventDefault();//取消事件
   $(this).prev("input").val("").trigger("input").focus();
 });
 
-/*$( document ).ready(function() {
- $('input[id^="exception_"]').on('click', function() {  
-    alert(this.value);
- });
-})*/
 
 
 
@@ -345,7 +320,7 @@ window.onload = function() {
 var play = document.getElementById('play'),
 stop = document.getElementById('stop');
 // 開始抽獎
-play.onclick = playFun;
+/*play.onclick = playFun;*/
 stop.onclick = stopFun;
 // 鍵盤事件
 document.onkeyup = function(event) {
@@ -359,18 +334,16 @@ stopFun();
 flag = 0;
 }
 }
-}
-}
+}}
 // 開始抽獎
 function playFun() {
 var title = document.getElementById('title');
 var play = document.getElementById('play');
 //每次都先清除上一次的定時器任務，避免抽獎效果累加頻率會越來越快
-clearTimeout(timer);
-timer = setTimeout(function() {
+setTimeout(function() {
 var random = Math.floor(Math.random() * data.length);
 title.innerHTML = data[random];
-}, 1000);
+}, 500);
 play.style.background = '#999';
 }
 //停止抽獎
@@ -379,6 +352,15 @@ function stopFun() {
 var play = document.getElementById('play');
 play.style.background = '#036';
 }
+/*function lottery(){
+  const ts= getTimeRemaining(v2.value);
+    if(ts.total == 0 ||ts.total < 0  ){
+    alert("0");
+        };
+  
+  
+}*/
+
 </script> 
 
 </body>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>首頁</title>
+
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<input type="text" id="a"><button onclick="setCookie('b',a.value,7,'/');">確定</button>
+	<script type="text/javascript">
+	const a = document.getElementById("a");
+function setCookie(name, value, days, path)
+{
+  const expires = new Date(Date.now() + days * 864e5).toUTCString()
+  document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path
+};
+
+const getCookie = (name) => {
+  return document.cookie.split('; ').reduce((r, v) => {
+    const parts = v.split('=')
+    return parts[0] === name ? decodeURIComponent(parts[1]) : r
+  }, '')
+}
+
+const deleteCookie = (name, path) => {
+  setCookie(name, '', -1, path)
+}
+
+    </script>
+</body>
+</html>
