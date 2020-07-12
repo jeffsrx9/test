@@ -113,7 +113,8 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
     document.getElementById('datepicker').disabled = true;
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
-    initializeClock('clockdiv',v2.value);checkhours(); myfunction();checkminutes();setCookie('date',v2.value,10,'/');"
+    initializeClock('clockdiv',v2.value);checkhours(); myfunction();checkminutes();setCookie('date',v2.value,10,'/');
+    setCookie('hour',shours.value,10,'/');setCookie('mintue',Sminutes.value,10,'/');"
     >
     確定
     </button> 
