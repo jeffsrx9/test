@@ -83,6 +83,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
   </script>
 
 <body onload = "checkCookie();">
+  
   <h1>金龍印章抽獎倒數</h1> 
     <div id="clockdiv"> 
         <div> 
@@ -145,7 +146,12 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
 <span id="stop">停 止</span>
 
 <script type="text/javascript">
-
+function checkCookie() {
+  var user=getCookie("date");
+  if (user != "") {
+    alert(user);
+  } 
+}
 const shours = document.getElementById('Shours');//使用者輸入小時
 const Sminutes = document.getElementById('Sminutes');//使月者輸入分鐘
 
@@ -379,12 +385,7 @@ function deleteCookie(name, path)
 {
   setCookie(name, '', -1, path)
 }
-function checkCookie() {
-  var user=getCookie("date");
-  if (user != "") {
-    alert(user);
-  } 
-}
+
 </script> 
 
 </body>
