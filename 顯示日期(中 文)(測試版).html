@@ -82,7 +82,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
   
   </script>
 
-<body >
+<body onload = "checkCookie();">
   <h1>金龍印章抽獎倒數</h1> 
     <div id="clockdiv"> 
         <div> 
@@ -390,7 +390,7 @@ function checkCookie() {
     initializeClock('clockdiv',user);checkhours(); myfunction();checkminutes();
   } 
 }
-checkCookie();
+
 </script> 
 
 </body>
