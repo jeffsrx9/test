@@ -377,7 +377,9 @@ function deleteCookie(name, path)
 {
   setCookie(name, '', -1, path)
 }
+
 const value =data.join(',');
+
 function lottycookie(){
 const expires = new Date(Date.now() + 10 *864000).toUTCString();
 
@@ -387,7 +389,7 @@ function checkCookie() {
   var userdate=getCookie('date');
   var userhour = getCookie('hour');
   var userminute = getCookie('minute');
- 
+ var lotty = $.cookie("key");
   if (userdate != "") {
 
     document.getElementById('clear').disabled = false;
@@ -395,7 +397,7 @@ function checkCookie() {
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
     initializeClock('clockdiv',userdate ,userhour,userminute);
-    document.write(value);
+    
   } 
 }
 checkCookie();
