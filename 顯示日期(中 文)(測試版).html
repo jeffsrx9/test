@@ -113,8 +113,8 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
     document.getElementById('datepicker').disabled = true;
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
-    initializeClock('clockdiv',v2.value);checkhours(); myfunction();checkminutes();setCookie('date',v2.value,10,'/');
-    setCookie('hour',shours.value,10,'/');setCookie('mintue',Sminutes.value,10,'/');"
+    initializeClock('clockdiv',v2.value,shours.value ,Sminutes.value);checkhours(); myfunction();checkminutes();setCookie('date',v2.value,10,'/');
+    setCookie('hour',shours.value,10,'/');setCookie('minute',Sminutes.value,10,'/');"
     >
     確定
     </button> 
@@ -150,9 +150,9 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
 const shours = document.getElementById('Shours');//使用者輸入小時
 const Sminutes = document.getElementById('Sminutes');//使月者輸入分鐘
 
-function getTimeRemaining(endtime) { //倒數日期計算
-  const sh = (shours.value)*60*60*1000;
-  const sm = (Sminutes.value)*60*1000;
+function getTimeRemaining(endtime ,endhour , endminute) { //倒數日期計算
+  const sh = endhour*60*60*1000;
+  const sm = endminute*60*1000;
   const total = ( Date.parse(endtime)- Date.parse(new Date()))+sh+sm;//輸入日期-當前日期   (豪秒數)
   const seconds = Math.floor((total / 1000) % 60); 
   const minutes = Math.floor((total / 1000 / 60) % 60); 
@@ -198,14 +198,14 @@ function checkminutes(){  //輸入分鐘判斷式
   }
 //////////////////
 
-  function initializeClock(id, endtime) {  //顯示倒數
+  function initializeClock(id, endtime ,endhour , endminute) {  //顯示倒數
   const clock = document.getElementById(id); 
   const daysSpan = clock.querySelector('.days'); 
   const hoursSpan = clock.querySelector('.hours'); 
   const minutesSpan = clock.querySelector('.minutes'); 
   const secondsSpan = clock.querySelector('.seconds'); 
   function updateClock() { 
-  const t = getTimeRemaining(endtime);      
+  const t = getTimeRemaining(endtime ,endhour , endminute);      
       daysSpan.innerHTML = ('0' + t.days).slice(-2);    //前導零
       hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
       minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
@@ -353,14 +353,10 @@ function stopFun() {
 var play = document.getElementById('play');
 play.style.background = '#036';
 }
-/*function lottery(){
-  const ts= getTimeRemaining(v2.value);
-    if(ts.total == 0 ||ts.total < 0  ){
-    alert("0");
-        };
+
   
   
-}*/
+
 //餅乾!!
 function setCookie(name, value, days, path)
 {
@@ -381,14 +377,17 @@ function deleteCookie(name, path)
   setCookie(name, '', -1, path)
 }
 function checkCookie() {
-  var user=getCookie('date');
+  var userdate=getCookie('date');
+  var userhour = getCookie('hour');
+  var userminute = getCookie('minute');
+  
   if (user != "") {
 
     document.getElementById('clear').disabled = false;
     document.getElementById('datepicker').disabled = true;
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
-    initializeClock('clockdiv',user);
+    initializeClock('clockdiv',userdate ,userhour,userminute);
   } 
 }
 checkCookie();
