@@ -298,6 +298,7 @@ $(function () {
      var x =  custom.find('#' + index).val(); 
      data.push(x);
      console.log(data);
+     document.cookie = 'key=' + value + '; expires=' + expires + '; path=/';
     });    
   $(".cl").val("").focus();
 })(counter);
@@ -379,11 +380,11 @@ function deleteCookie(name, path)
 }
 
 const value =data.join(',');
-
-function lottycookie(){
 const expires = new Date(Date.now() + 10 *864000).toUTCString();
+function lottycookie(){
 
-document.cookie = 'key=' + value + '; expires=' + expires + '; path=/';
+
+
 };
 function checkCookie() {
   var userdate=getCookie('date');
