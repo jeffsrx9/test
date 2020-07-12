@@ -380,14 +380,14 @@ function deleteCookie(name, path)
   setCookie(name, '', -1, path)
 }
 function checkCookie() {
-  const user=getCookie('date');
+  var user=getCookie('date');
   if (user != "") {
 
     document.getElementById('clear').disabled = false;
     document.getElementById('datepicker').disabled = true;
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
-    initializeClock('clockdiv',user);checkhours(); myfunction();checkminutes();
+    initializeClock('clockdiv',user);
   } 
 }
 
