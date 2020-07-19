@@ -300,12 +300,7 @@ $(function () {
       $(".cl").focus();
         }); 
 
-      newRow.find('.btn_check1').click(function() {
-     var x =  custom.find('#' + index).val(); 
-     data.push(x);
-     console.log(data);
-     
-    });    
+       
   $(".cl").val("").focus();
 })(counter);
 });
@@ -414,8 +409,8 @@ function checkCookie() {
        
     cooktext +="<button id='rome'>X" + "</button>"+ keyarray[cook] + "<br>";
   } 
-  $(function(){
-  cookbtn.find('#rome').click(function() {
+  
+ $('#rome').click(function() {
       var DX =data.indexOf(T);
       var json_string = JSON.stringify(data);
       if (DX > -1) {
