@@ -404,22 +404,17 @@ function checkCookie() {
   var cook;
   var cooktext = "";
   var cookbtn = document.createElement("BUTTON");
-  if (userdate != "") {
-  
-  
-  
-  
+  if (userdate != "") { 
     document.getElementById('clear').disabled = false;
     document.getElementById('datepicker').disabled = true;
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
     initializeClock('clockdiv',userdate ,userhour,userminute);
     for(cook = 0; cook<keyarray.length; cook++){
-      
-  
-    
+       
     cooktext +="<button id='rome'>X" + "</button>"+ keyarray[cook] + "<br>";
   } 
+  (function(){
   cookbtn.find('.rome').click(function() {
       var DX =data.indexOf(T);
       var json_string = JSON.stringify(data);
@@ -427,7 +422,8 @@ function checkCookie() {
       data.splice(DX, 1);
       setCookie("key", json_string, 10 ,'/');
       console.log(data);
-      }
+      };
+      });
       });
   document.getElementById("cool").appendChild(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
