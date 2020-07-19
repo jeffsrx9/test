@@ -379,11 +379,11 @@ function deleteCookie(name, path)
   setCookie(name, '', -1, path)
 }
 
-const value =data.join(',');
+const cookvalue =data.join(',');
 const expires = new Date(Date.now() + 10 *864000).toUTCString();
 function lottycookie(){
 
-  document.cookie = 'key=' + value;
+  document.cookie = 'key=' + cookvalue;
 
 };
 function checkCookie() {
