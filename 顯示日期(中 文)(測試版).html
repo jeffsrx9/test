@@ -384,7 +384,7 @@ const cookvalue =data.join(',');
 
 function lottycookie(){
   const expires = new Date(Date.now() + 10 *864000).toUTCString();
-  document.cookie = 'key=' + cookvalue + '; expires=' + expires + '; path=/';
+  document.cookie = 'key=' + cookvalue;
 
 };
 function checkCookie() {
