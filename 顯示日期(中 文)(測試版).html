@@ -417,9 +417,10 @@ function checkCookie() {
     for(cook = 0; cook<keyarray.length; cook++){
       
     cookbtn.innerHTML = "X";
-    document.getElementById("cool").appendChild(cookbtn);
+    
     cooktext += keyarray[cook] + "<br>";
   } 
+  document.getElementById("cool").appendChild(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
   } 
 }
