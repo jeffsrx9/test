@@ -380,9 +380,9 @@ function deleteCookie(name, path)
 }
 
 const cookvalue =data.join(',');
-const expires = new Date(Date.now() + 10 *864000).toUTCString();
-function lottycookie(){
 
+function lottycookie(){
+  const expires = new Date(Date.now() + 10 *864000).toUTCString();
   document.cookie = 'key=' + cookvalue + '; expires=' + expires + '; path=/';
 
 };
