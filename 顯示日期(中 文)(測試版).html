@@ -114,7 +114,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
     initializeClock('clockdiv',v2.value,shours.value ,Sminutes.value);checkhours(); myfunction();checkminutes();setCookie('date',v2.value,10,'/');
-    setCookie('hour',shours.value,10,'/');setCookie('minute',Sminutes.value,10,'/');"
+    setCookie('hour',shours.value,10,'/');setCookie('minute',Sminutes.value,10,'/');lottycookie();"
     >
     確定
     </button> 
@@ -269,7 +269,7 @@ const first2 = document.getElementById("1");
 function F(){     
        data.push(first2.value);
        console.log(data);
-       lottycookie();
+      
 }
 
 var counter = 1;
