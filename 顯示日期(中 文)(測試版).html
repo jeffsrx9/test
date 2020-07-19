@@ -416,9 +416,9 @@ function checkCookie() {
     initializeClock('clockdiv',userdate ,userhour,userminute);
     for(cook = 0; cook<keyarray.length; cook++){
       
-    cookbtn.innerHTML = "X";
+  
     
-    cooktext +="<button>"+ keyarray[cook] + "<br>";
+    cooktext +="<button>"+ X + "</button>"+ keyarray[cook] + "<br>";
   } 
   document.getElementById("cool").appendChild(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
