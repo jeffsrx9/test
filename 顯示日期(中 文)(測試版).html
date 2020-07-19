@@ -293,8 +293,6 @@ $(function () {
       data.splice(DX, 1);
       setCookie("key", json_string, 10 ,'/');
       console.log(data);
-       
-      
       }
       custom.find('.row' + index).remove();
       $(".cl").focus();
@@ -407,7 +405,7 @@ function checkCookie() {
     initializeClock('clockdiv',userdate ,userhour,userminute);
     for(cook = 0; cook<keyarray.length; cook++){
        
-    cooktext +="<button id='rome'>X" + "</button>"+ keyarray[cook] + "<br>";
+    cooktext +='<button id="rome"  class="'+ cook +'">X</button> '+ keyarray[cook] + "<br>";
   } 
   
  $('#cool').find('#rome').click(function() {
@@ -418,6 +416,8 @@ function checkCookie() {
       setCookie("key", json_string, 10 ,'/');
       console.log(data);
       };
+      $('#cool').find('.' + cook).remove();
+      $(".cl").focus();
       });
   
   document.getElementById("cool").appendChild(cookbtn);
