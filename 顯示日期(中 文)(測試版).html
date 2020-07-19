@@ -413,6 +413,7 @@ function checkCookie() {
   document.getElementById("cool").appendChild(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
   $('#cool').find('#rome').click(function() {
+    let T = first2.value;
       var DX =data.indexOf(T);
       var json_string = JSON.stringify(data);
       if (DX > -1) {
