@@ -403,6 +403,7 @@ function checkCookie() {
   var keyarray = JSON.parse(json_string1);
   var cook;
   var cooktext = "";
+  var cookbtn = document.createElement("BUTTON");
   if (userdate != "") {
   
   
@@ -414,6 +415,9 @@ function checkCookie() {
     document.getElementById('Sminutes').disabled = true;
     initializeClock('clockdiv',userdate ,userhour,userminute);
     for(cook = 0; cook<keyarray.length; cook++){
+      
+    cookbtn.innerHTML = "X";
+    document.getElementById("cool").appendChild(cookbtn);
     cooktext += keyarray[cook] + "<br>";
   } 
   document.getElementById("cool").innerHTML = cooktext;
