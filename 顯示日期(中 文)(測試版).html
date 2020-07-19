@@ -290,6 +290,8 @@ $(function () {
       if (DX > -1) {
       data.splice(DX, 1);
       console.log(data);
+       var json_string = JSON.stringify(data);
+      setCookie("key", json_string, 10 ,'/');
       }
       custom.find('.row' + index).remove();
       $(".cl").focus();
