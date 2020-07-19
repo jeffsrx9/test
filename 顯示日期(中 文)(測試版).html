@@ -138,6 +138,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
     <button class="btn_clear1"  onclick="" >清除</button>
     <button class="btn_check1" id = "S" onclick="F();">確定</button>
 </span>
+<p id="cool"></p>
 
 
 <div id="title" class="title">開始抽獎啦！</div>
@@ -392,6 +393,17 @@ function lottycookie(){
   setCookie("key", json_string, 10 ,'/');
 
 };
+function cookload(){
+  var json_string1 = getCookie("key");
+var keyarray = JSON.parse(json_string1);
+  var cook;
+  var cooktext = "";
+  for(cook = 0; cook<data.length; cook++){
+    cooktext += data[cook] + "<br>";
+  } 
+  document.getElementById("cookl").innerHTML = cooktext;
+}
+
 function checkCookie() {
   var userdate=getCookie('date');
   var userhour = getCookie('hour');
