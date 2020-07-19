@@ -114,7 +114,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
     initializeClock('clockdiv',v2.value,shours.value ,Sminutes.value);checkhours(); myfunction();checkminutes();setCookie('date',v2.value,10,'/');
-    setCookie('hour',shours.value,10,'/');setCookie('minute',Sminutes.value,10,'/');lottycookie();"
+    setCookie('hour',shours.value,10,'/');setCookie('minute',Sminutes.value,10,'/');"
     >
     確定
     </button> 
@@ -136,7 +136,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
   <span class="wrap_input">
     <input type="text" class = "cl" id ="1" >
     <button class="btn_clear1"  onclick="" >清除</button>
-    <button class="btn_check1" id = "S" onclick="F();">確定</button>
+    <button class="btn_check1" id = "S" onclick="F();lottycookie();">確定</button>
 </span>
 
 
