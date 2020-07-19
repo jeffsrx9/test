@@ -395,7 +395,7 @@ function checkCookie() {
   var json_string1 = getCookie("key");
   var keyarray = JSON.parse(json_string1);
   var cook;
-  var cooktext = "";
+  const cooktext = "";
   var cookbtn = document.createElement("BUTTON");
   if (userdate != "") { 
     document.getElementById('clear').disabled = false;
@@ -408,7 +408,11 @@ function checkCookie() {
     cooktext +='<button id="rome"  class="'+ cook +'">X</button> '+ keyarray[cook] + "<br>";
   } 
   
- $('#cool').find('#rome').click(function() {
+ 
+  
+  document.getElementById("cool").appendChild(cookbtn);
+  document.getElementById("cool").innerHTML = cooktext;
+  $('#cool').find('#rome').click(function() {
       var DX =data.indexOf(T);
       var json_string = JSON.stringify(data);
       if (DX > -1) {
@@ -419,9 +423,6 @@ function checkCookie() {
       $('#cool').find('.' + cook).remove();
       $(".cl").focus();
       });
-  
-  document.getElementById("cool").appendChild(cookbtn);
-  document.getElementById("cool").innerHTML = cooktext;
   } 
   }
 checkCookie();
