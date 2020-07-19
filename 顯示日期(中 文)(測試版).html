@@ -410,7 +410,7 @@ function checkCookie() {
     cooktext +="<button id='rome'>X" + "</button>"+ keyarray[cook] + "<br>";
   } 
   
- cookbtn.find('#rome').click(function() {
+ $('cool').find('#rome').click(function() {
       var DX =data.indexOf(T);
       var json_string = JSON.stringify(data);
       if (DX > -1) {
@@ -419,7 +419,7 @@ function checkCookie() {
       console.log(data);
       };
       });
-      
+  
   document.getElementById("cool").appendChild(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
   } 
