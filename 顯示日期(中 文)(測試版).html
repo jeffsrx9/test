@@ -136,7 +136,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
   <span class="wrap_input">
     <input type="text" class = "cl" id ="1" >
     <button class="btn_clear1"  onclick="" >清除</button>
-    <button class="btn_check1" id = "S" onclick="F();lottycookie();">確定</button>
+    <button class="btn_check1" id = "S" onclick="F();">確定</button>
 </span>
 
 
@@ -269,7 +269,8 @@ const first2 = document.getElementById("1");
 function F(){     
        data.push(first2.value);
        console.log(data);
-      
+       lottycookie();
+
 }
 
 var counter = 1;
