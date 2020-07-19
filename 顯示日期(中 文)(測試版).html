@@ -386,10 +386,10 @@ function deleteCookie(name, path)
 }
 
 
-const json_string = JSON.stringify(data);
+
 function lottycookie(){
   const expires = new Date(Date.now() + 10 *864000).toUTCString();
-  
+  let json_string = JSON.stringify(data);
   setCookie("key", json_string, 10 ,'/');
 
 };
