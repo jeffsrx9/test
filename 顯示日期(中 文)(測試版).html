@@ -414,7 +414,7 @@ function checkCookie() {
        
     cooktext +="<button id='rome'>X" + "</button>"+ keyarray[cook] + "<br>";
   } 
-  (function(){
+  $(function(){
   cookbtn.find('#rome').click(function() {
       var DX =data.indexOf(T);
       var json_string = JSON.stringify(data);
