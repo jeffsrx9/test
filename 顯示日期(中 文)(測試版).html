@@ -386,37 +386,37 @@ function deleteCookie(name, path)
 }
 
 
-
+const json_string = JSON.stringify(data);
 function lottycookie(){
   const expires = new Date(Date.now() + 10 *864000).toUTCString();
-  var json_string = JSON.stringify(data);
+  
   setCookie("key", json_string, 10 ,'/');
 
 };
-function cookload(){
-  var json_string1 = getCookie("key");
-var keyarray = JSON.parse(json_string1);
-  var cook;
-  var cooktext = "";
-  for(cook = 0; cook<data.length; cook++){
-    cooktext += data[cook] + "<br>";
-  } 
-  document.getElementById("cookl").innerHTML = cooktext;
-}
+
 
 function checkCookie() {
   var userdate=getCookie('date');
   var userhour = getCookie('hour');
   var userminute = getCookie('minute');
- 
+  var json_string1 = getCookie("key");
+  var keyarray = JSON.parse(json_string1);
+  var cook;
+  var cooktext = "";
   if (userdate != "") {
-
+  
+  
+  
+  document.getElementById("cookl").innerHTML = cooktext;
     document.getElementById('clear').disabled = false;
     document.getElementById('datepicker').disabled = true;
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
     initializeClock('clockdiv',userdate ,userhour,userminute);
-    
+    for(cook = 0; cook<data.length; cook++){
+    cooktext += keyarray[cook] + "<br>";
+  } 
+  document.getElementById("cool").innerHTML = cooktext;
   } 
 }
 checkCookie();
