@@ -383,7 +383,7 @@ const value =data.join(',');
 const expires = new Date(Date.now() + 10 *864000).toUTCString();
 function lottycookie(){
 
-  $.cookie('key', JSON.stringify(data));
+  document.cookie = 'key=' + value;
 
 };
 function checkCookie() {
