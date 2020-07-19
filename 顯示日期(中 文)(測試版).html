@@ -380,12 +380,12 @@ function deleteCookie(name, path)
   setCookie(name, '', -1, path)
 }
 
-var cookvalue =data.join(',');
+
 
 function lottycookie(){
   const expires = new Date(Date.now() + 10 *864000).toUTCString();
   var json_string = JSON.stringify(data);
-  setCookie("key", json_string, expires);
+  setCookie("key", json_string, 10 ,'/');
 
 };
 function checkCookie() {
@@ -404,7 +404,7 @@ function checkCookie() {
   } 
 }
 checkCookie();
-lottycookie()
+lottycookie();
 </script> 
 
 </body>
