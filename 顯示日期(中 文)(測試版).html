@@ -316,7 +316,7 @@ $(document).on("touchstart click", ".btn_clear1", function(e) {
 
 
  ////////////////////抽獎系統
- var data = [];
+ const data = [];
 timer = null, //定時器
 flag = 0; //用於鍵盤事件狀態標記
 window.onload = function() {
@@ -383,7 +383,7 @@ const value =data.join(',');
 const expires = new Date(Date.now() + 10 *864000).toUTCString();
 function lottycookie(){
 
-
+  $.cookie('key', JSON.stringify(data));
 
 };
 function checkCookie() {
