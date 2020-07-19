@@ -418,8 +418,16 @@ function checkCookie() {
       
   
     
-    cooktext +="<button>X" + "</button>"+ keyarray[cook] + "<br>";
+    cooktext +="<button id='rome'>X" + "</button>"+ keyarray[cook] + "<br>";
   } 
+  cookbtn.find('.rome').click(function() {
+      var DX =data.indexOf(T);
+      var json_string = JSON.stringify(data);
+      if (DX > -1) {
+      data.splice(DX, 1);
+      setCookie("key", json_string, 10 ,'/');
+      console.log(data);
+      }
   document.getElementById("cool").appendChild(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
   } 
