@@ -413,7 +413,7 @@ function checkCookie() {
     document.getElementById('Shours').disabled = true;
     document.getElementById('Sminutes').disabled = true;
     initializeClock('clockdiv',userdate ,userhour,userminute);
-    for(cook = 0; cook<data.length; cook++){
+    for(cook = 0; cook<keyarray.length; cook++){
     cooktext += keyarray[cook] + "<br>";
   } 
   document.getElementById("cool").innerHTML = cooktext;
