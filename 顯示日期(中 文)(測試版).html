@@ -415,7 +415,7 @@ function checkCookie() {
   document.getElementById("cool").innerHTML = cooktext;
   (function(index){
   $('#cool').find('#rome').click(function() {
-    let Y =$('.' +index).val();
+    let Y =$('#cool').find('.' +index).val();
       var DX =keyarray.indexOf(Y);
       var json_string = JSON.stringify(data);
       if (DX > -1) {
