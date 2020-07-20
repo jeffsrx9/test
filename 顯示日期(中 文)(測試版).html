@@ -296,9 +296,7 @@ $(function () {
       }
       custom.find('.row' + index).remove();
       $(".cl").focus();
-        }); 
-
-       
+        });        
   $(".cl").val("").focus();
 })(counter);
 });
@@ -405,14 +403,16 @@ function checkCookie() {
     initializeClock('clockdiv',userdate ,userhour,userminute);
     for(cook = 0; cook<keyarray.length; cook++){
        
-    cooktext +='<button id="rome"  class="'+ cook +'">X</button> '+ keyarray[cook] + "<br>";
+    
+     cooktext +='<button id="rome"  class="'+ cook +'">X</button> '+ keyarray[cook] + "<br>";
   } 
   
  
   
   document.getElementById("cool").appendChild(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
-  $('#cool').find('#rome').click(function() {
+  $(function(){
+  $('#cool').find('.' + cook).click(function() {
     let Y =first2.value;
       var DX =keyarray.indexOf(Y);
       var json_string = JSON.stringify(data);
@@ -424,7 +424,8 @@ function checkCookie() {
       $('#cool').find('.' + cook).remove();
       $(".cl").focus();
       });
-  } 
+  });
+  }
   }
 checkCookie();
 
