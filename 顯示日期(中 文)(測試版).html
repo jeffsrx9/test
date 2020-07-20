@@ -412,7 +412,7 @@ function checkCookie() {
   document.getElementById("cool").appendChild(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
   $(function(){
-  $('#cool').find('.' + cook).click(function() {
+  $('#cool').find('#rome').click(function() {
     let Y =first2.value;
       var DX =keyarray.indexOf(Y);
       var json_string = JSON.stringify(data);
@@ -421,7 +421,7 @@ function checkCookie() {
       setCookie("key", json_string, 10 ,'/');
       console.log(data);
       };
-      $('#cool').find('.' + cook).remove();
+      $('#cool').find('#rome').remove();
       $(".cl").focus();
       });
   });
