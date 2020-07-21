@@ -406,7 +406,13 @@ function checkCookie() {
        
     
       cooktext += '<p class="ck'+ cook +'"><button id="rome"  >X</button> <span id = "AJ">'+ keyarray[cook]+'</span> </p>' ;
-     (function(index) {
+
+    }
+ 
+  
+  document.getElementById("cool").append(cookbtn);
+  document.getElementById("cool").innerHTML = cooktext;
+  (function(index) {
     cooktext.find('#rome').click(function() {
       var DX =keyarray.indexOf(keyarray[cook]);
       var json_string = JSON.stringify(keyarray);
@@ -420,12 +426,6 @@ function checkCookie() {
         });      
 
   } );
-    }
- 
-  
-  document.getElementById("cool").append(cookbtn);
-  document.getElementById("cool").innerHTML = cooktext;
-  
  
   
       
