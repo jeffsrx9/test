@@ -404,7 +404,7 @@ function checkCookie() {
     for(cook = 0; cook<keyarray.length; cook++){
        
     
-     cooktext +='<p class="'+ cook +'"><button id="rome"  >X</button> <span id = "AJ">'+ keyarray[cook]+'</span> </p>' ;
+     cooktext +='<p class="ck'+ cook +'"><button id="rome"  >X</button> <span id = "AJ">'+ keyarray[cook]+'</span> </p>' ;
      
 
   } 
@@ -415,15 +415,9 @@ function checkCookie() {
   document.getElementById("cool").innerHTML = cooktext;
   (function(index){
   $('#cool').find('#rome').click(function() {
-  /* let Y =$("#AJ").val();
-      var DX =keyarray.indexOf(Y);
-      var json_string = JSON.stringify(data);
-      if (DX > -1) {
-      data.splice(DX, 1);
-      setCookie("key", json_string, 10 ,'/');
-      console.log(keyarray);
-      };*/console.log(keyarray);
-      $('#cool').find('.' +index).remove();
+  
+     
+      $('#cool').find('.ck' +index).remove();
       $(".cl").focus();
       });
     });
