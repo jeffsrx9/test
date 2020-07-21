@@ -406,7 +406,6 @@ function checkCookie() {
        
     
       cooktext += '<p class="ck'+ cook +'"><button id="rome"  >X</button> '+ keyarray[cook]+'</p>' ;
-
     }
  
   
@@ -414,13 +413,13 @@ function checkCookie() {
   document.getElementById("cool").innerHTML = cooktext;
   (function(index) {
     cool.find('#rome').click(function() {
-     var DX =keyarray.indexOf(keyarray[index]);
+   /*  var DX =keyarray.indexOf(keyarray[index]);
       var json_string2 = JSON.stringify(keyarray);
       if (DX > -1) {
         keyarray.splice(DX, 1);
-      setCookie("key", json_string2, 10 ,'/');
+      setCookie("key", json_string2, 10 ,'/');*/
       console.log(keyarray);
-      }
+     /* }*/
       cool.find('.ck' + index).remove();
       $(".cl").focus();
         });      
