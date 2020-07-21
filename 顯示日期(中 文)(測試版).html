@@ -415,10 +415,10 @@ function checkCookie() {
   (function(index) {
     cool.find('#rome').click(function() {
       var DX =keyarray.indexOf(keyarray[index]);
-      var json_string = JSON.stringify(keyarray);
+      var json_string2 = JSON.stringify(keyarray);
       if (DX > -1) {
         keyarray.splice(DX, 1);
-      setCookie("key", json_string, 10 ,'/');
+      setCookie("key", json_string2, 10 ,'/');
       console.log(keyarray);
       }
       cool.find('.ck' + index).remove();
