@@ -138,7 +138,7 @@ $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
     <button class="btn_clear1"  onclick="" >清除</button>
     <button class="btn_check1" id = "S" onclick="F();">確定</button>
 </span>
-<p id="cool"></p>
+<span id="cool"></span>
 
 
 <div id="title" class="title">開始抽獎啦！</div>
@@ -393,7 +393,7 @@ function checkCookie() {
   var json_string1 = getCookie('key');
   var keyarray = JSON.parse(json_string1);
   var cook;
-  var cooktext = "";
+  cool = $("#cool");
   var cookbtn = document.createElement("BUTTON");
   if (userdate != "") { 
     document.getElementById('clear').disabled = false;
@@ -404,22 +404,30 @@ function checkCookie() {
     for(cook = 0; cook<keyarray.length; cook++){
        
     
-     cooktext +='<p class="ck'+ cook +'"><button id="rome"  >X</button> <span id = "AJ">'+ keyarray[cook]+'</span> </p>' ;
-     
+     const cooktext = cooktext + $('<p class="ck'+ cook +'"><button id="rome"  >X</button> <span id = "AJ">'+ keyarray[cook]+'</span> </p>' );
+     (function(index) {
+    cooktext.find('#rome').click(function() {
+      var DX =keyarray.indexOf(keyarray[cook]);
+      var json_string = JSON.stringify(keyarray);
+      if (DX > -1) {
+        keyarray.splice(DX, 1);
+      setCookie("key", json_string, 10 ,'/');
+      console.log(keyarray);
+      }
+      cool.find('.ck' + index).remove();
+      $(".cl").focus();
+        });      
 
-  } 
-  
+  } );
+    }
  
   
   document.getElementById("cool").append(cookbtn);
   document.getElementById("cool").innerHTML = cooktext;
   
-  $('#cool').find('#rome').click(function() {
+ 
   
-     
       
-      $(".cl").focus();
-      });
   }
   
   }
