@@ -405,7 +405,7 @@ function checkCookie() {
     for(cook = 0; cook<keyarray.length; cook++){
        
     
-      cooktext = cooktext + $('<p class="ck'+ cook +'"><button id="rome"  >X</button> <span id = "AJ">'+ keyarray[cook]+'</span> </p>' );
+      cooktext += '<p class="ck'+ cook +'"><button id="rome"  >X</button> <span id = "AJ">'+ keyarray[cook]+'</span> </p>' ;
      (function(index) {
     cooktext.find('#rome').click(function() {
       var DX =keyarray.indexOf(keyarray[cook]);
