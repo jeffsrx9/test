@@ -403,6 +403,7 @@ function deltxt(id){
   var keyarray = JSON.parse(json_string1);//=[ X,X,x]
   var cook;
   var cooktext="";
+  var delid = 1;
 function checkCookie() {
   
   cool = $("#cool");
@@ -416,8 +417,10 @@ function checkCookie() {
     for(cook = 0; cook<keyarray.length; cook++){
        
     
-      cooktext += '<p class="ck'+ cook +'"><input type="button" value="X" onclick="deltxt('+cook+')">'+ keyarray[cook]+'</p>' ;
+      cooktext += '<p class="ck'+ delid +'"><input type="button" value="X" onclick="deltxt('+delid+')">'+ keyarray[cook]+'</p>' ;
+      delid += 1;
     }
+
  
   
 
