@@ -289,10 +289,10 @@ $(function () {
     newRow.find('.remove-text-box').click(function() {
       
       var DX =data.indexOf(T);
-      var json_string3 = JSON.stringify(data);
+      
       if (DX > -1) {
       data.splice(DX, 1);
-      setCookie("key", json_string3, 10 ,'/');
+      lottycookie();
       console.log(data);
       }
       custom.find('.row' + index).remove();
