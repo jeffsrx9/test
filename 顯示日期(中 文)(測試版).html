@@ -386,16 +386,17 @@ function lottycookie(){
 };
 function deltxt(id){
    $(".ck" + id).remove();
+  console.log(keyarray);
  }
-
-function checkCookie() {
-  var userdate=getCookie('date');
+ var userdate=getCookie('date');
   var userhour = getCookie('hour');
   var userminute = getCookie('minute');
   var json_string1 = getCookie('key');
   var keyarray = JSON.parse(json_string1);//=[ X,X,x]
   var cook;
   var cooktext="";
+function checkCookie() {
+  
   cool = $("#cool");
  
   if (userdate != "") { 
