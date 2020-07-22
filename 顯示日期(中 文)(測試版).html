@@ -387,13 +387,12 @@ function lottycookie(){
 };
 function deltxt(id){
   
-  var json_string1 = getCookie('key');
-  var keyarray = JSON.parse(json_string1);
+  
     var DX2 =keyarray.indexOf($('.ck' + id).text());
-      var json_string2 = JSON.stringify(keyarray);
+     
       if (DX2 > -1) {
         keyarray.splice(DX2, 1);
-        setCookie("key", json_string2, 10 ,'/');
+        lottycookie();
       console.log(keyarray);
       }
       
@@ -402,7 +401,7 @@ function deltxt(id){
  }
  
   
-/*function checkCookie() {
+function checkCookie() {
   var userdate=getCookie('date');
   var userhour = getCookie('hour');
   var userminute = getCookie('minute');
@@ -440,7 +439,7 @@ function deltxt(id){
   
   
   }
-checkCookie();*/
+checkCookie();
 
 </script> 
 
