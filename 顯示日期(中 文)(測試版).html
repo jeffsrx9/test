@@ -387,8 +387,8 @@ function lottycookie(){
 function deltxt(id){
 
    $(".ck" + id).remove();
-    var DX =keyarray.indexOf(T);
-      var json_string = JSON.stringify(keyarray[cook]);
+    var DX =keyarray.indexOf(keyarray[cook]);
+      var json_string = JSON.stringify(keyarray);
       if (DX > -1) {
         keyarray.splice(DX, 1);
       setCookie("key", json_string, 10 ,'/');
