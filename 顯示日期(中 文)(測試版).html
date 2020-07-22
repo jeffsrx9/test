@@ -385,14 +385,13 @@ function lottycookie(){
 
 };
 function deltxt(id){
-
+  var json_string1 = getCookie('key');
+  var keyarray = JSON.parse(json_string1);
    
     var DX2 =keyarray.indexOf($('.ck' + id).text());
       var json_string2 = JSON.stringify(keyarray);
       if (DX2 > -1) {
         keyarray.splice(DX2, 1);
-     
-     
       }
       setCookie("key", json_string2, 10 ,'/');
       console.log(keyarray);
