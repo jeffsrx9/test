@@ -395,7 +395,8 @@ function deltxt(id){
      
       if (DX2 > -1) {
         keyarray.splice(DX2, 1);
-        setCookie("key", json_string, 10 ,'/');
+        var keyarray1 = JSON.stringify(keyarray);
+        setCookie("key", keyarray1, 10 ,'/');
       console.log(keyarray);
       }
       
