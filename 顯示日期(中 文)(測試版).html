@@ -392,9 +392,10 @@ function deltxt(id){
       var json_string2 = JSON.stringify(keyarray);
       if (DX2 > -1) {
         keyarray.splice(DX2, 1);
-      }
-      setCookie("key", json_string2, 10 ,'/');
+        setCookie("key", json_string2, 10 ,'/');
       console.log(keyarray);
+      }
+      
       $(".ck" + id).remove();
       
  }
