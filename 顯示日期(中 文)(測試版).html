@@ -288,7 +288,7 @@ $(function () {
   (function(index) {
     newRow.find('.remove-text-box').click(function() {
       var DX =data.indexOf(T);
-     
+      var json_string = JSON.stringify(data);
       if (DX > -1) {
       data.splice(DX, 1);
       setCookie("key", json_string, 10 ,'/');
