@@ -386,15 +386,15 @@ function lottycookie(){
 };
 function deltxt(id){
 
-   $(".ck" + id).remove();
+   
     var DX =keyarray.indexOf(keyarray[id])-1;
-      var json_string = JSON.stringify(keyarray);
+      var json_string2 = JSON.stringify(keyarray);
       if (DX > -1) {
         keyarray.splice(DX, 1);
-      setCookie("key", json_string, 10 ,'/');
+      setCookie("key", json_string2, 10 ,'/');
       console.log(keyarray);
       }
-  
+      $(".ck" + id).remove();
  }
  var userdate=getCookie('date');
   var userhour = getCookie('hour');
