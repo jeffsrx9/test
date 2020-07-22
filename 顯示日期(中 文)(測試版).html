@@ -287,6 +287,7 @@ $(function () {
   custom.append(newRow);
   (function(index) {
     newRow.find('.remove-text-box').click(function() {
+      
       var DX =data.indexOf(T);
       var json_string3 = JSON.stringify(data);
       if (DX > -1) {
@@ -378,7 +379,7 @@ function deleteCookie(name, path)
 
 
 function lottycookie(){
-  const expires = new Date(Date.now() + 10 *864000).toUTCString();
+ 
   var json_string = JSON.stringify(data);
 
   setCookie("key", json_string, 10 ,'/');
@@ -401,7 +402,7 @@ function deltxt(id){
  }
  
   
-function checkCookie() {
+/*function checkCookie() {
   var userdate=getCookie('date');
   var userhour = getCookie('hour');
   var userminute = getCookie('minute');
@@ -439,7 +440,7 @@ function checkCookie() {
   
   
   }
-checkCookie();
+checkCookie();*/
 
 </script> 
 
