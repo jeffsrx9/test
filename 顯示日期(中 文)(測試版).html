@@ -405,31 +405,22 @@ function checkCookie() {
     for(cook = 0; cook<keyarray.length; cook++){
        
     
-      cooktext += '<p class="ck'+ cook +'"><button class="rome"  >X</button> '+ keyarray[cook]+'</p>' ;
+      cooktext += '<p class="ck'+ cook +'"><input type="button" value="X" onclick="deltxt('+cook+')">'+ keyarray[cook]+'</p>' ;
     }
  
   
 
   document.getElementById("cool").innerHTML = cooktext;
- 
-  $(function(index) {
-    cool.find('.rome').click(function() {
-    var DX =keyarray.indexOf(keyarray[index]);
-      var json_string2 = JSON.stringify(keyarray);
-      if (DX > -1) {
-        keyarray.splice(DX, 1);
-      setCookie("key", json_string2, 10 ,'/');
-      console.log(keyarray);
-     }
-     /* cool.find('.ck' + index).remove();
-      $(".cl").focus();*/
-        });      
+ function deltxt(id){
+   $(".ck" + id).remove();
+ }
+    
 
-  } );
+  };
  
-  
+
       
-  }
+  
   
   }
 checkCookie();
