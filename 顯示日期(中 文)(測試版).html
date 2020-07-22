@@ -389,11 +389,13 @@ function deltxt(id){
    
     var DX2 =keyarray.indexOf($('.ck' + id).text());
       var json_string2 = JSON.stringify(keyarray);
+      if (DX2 > -1) {
+        keyarray.splice(DX2, 1);
      
-        keyarray.remove(DX2);
+     
+      }
       setCookie("key", json_string2, 10 ,'/');
       console.log(keyarray);
-      
       $(".ck" + id).remove();
       
  }
