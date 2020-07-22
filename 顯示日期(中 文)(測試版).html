@@ -288,7 +288,7 @@ $(function () {
   (function(index) {
     newRow.find('.remove-text-box').click(function() {
       var DX =data.indexOf(T);
-      var json_string = JSON.stringify(data);
+      
       if (DX > -1) {
       data.splice(DX, 1);
       setCookie("key", json_string, 10 ,'/');
@@ -375,21 +375,20 @@ function deleteCookie(name, path)
 {
   setCookie(name, '', -1, path)
 }
-
+const json_string = JSON.stringify(data);
 
 function lottycookie(){
   const expires = new Date(Date.now() + 10 *864000).toUTCString();
-  var json_string = JSON.stringify(data);
+  
 
   setCookie("key", json_string, 10 ,'/');
 
 };
 function deltxt(id){
-  var json_string1 = getCookie('key');
-  var keyarray = JSON.parse(json_string1);
+  
    
     var DX2 =keyarray.indexOf($('.ck' + id).text());
-      var json_string2 = JSON.stringify(keyarray);
+      const json_string2 = JSON.stringify(keyarray);
       if (DX2 > -1) {
         keyarray.splice(DX2, 1);
       }
@@ -398,14 +397,14 @@ function deltxt(id){
       $(".ck" + id).remove();
       
  }
- 
+ const json_string1 = getCookie('key');
+  const keyarray = JSON.parse(json_string1);
   
 function checkCookie() {
   var userdate=getCookie('date');
   var userhour = getCookie('hour');
   var userminute = getCookie('minute');
-  var json_string1 = getCookie('key');
-  var keyarray = JSON.parse(json_string1);//=[ X,X,x]
+ //=[ X,X,x]
   var cook;
   var cooktext="";
   cool = $("#cool");
