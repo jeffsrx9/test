@@ -384,7 +384,9 @@ function lottycookie(){
   setCookie("key", json_string, 10 ,'/');
 
 };
-
+function deltxt(id){
+   $(".ck" + id).remove();
+ }
 
 function checkCookie() {
   var userdate=getCookie('date');
@@ -411,9 +413,7 @@ function checkCookie() {
   
 
   document.getElementById("cool").innerHTML = cooktext;
- function deltxt(id){
-   $(".ck" + id).remove();
- }
+ 
     
 
   };
