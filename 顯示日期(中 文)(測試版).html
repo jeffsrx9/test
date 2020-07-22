@@ -387,15 +387,15 @@ function lottycookie(){
 function deltxt(id){
 
    
-    var DX =keyarray.indexOf($('.ck'+ id).val());
+    var DX =keyarray.indexOf(keyarray[cook]);
       var json_string2 = JSON.stringify(keyarray);
       if (DX > -1) {
         keyarray.splice(DX, 1);
       setCookie("key", json_string2, 10 ,'/');
-      
+      console.log(keyarray);
       }
       $(".ck" + id).remove();
-      console.log(keyarray);
+      
  }
  var userdate=getCookie('date');
   var userhour = getCookie('hour');
