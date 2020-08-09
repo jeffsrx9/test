@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<meta charset="utf-8" />
+<title>公會分組用</title>
+
+<style type="text/css">
+.box {
+    width: 100px;
+    height: 100px;
+    background: rgb(128, 255, 212);
+    margin: auto;
+    align-items: flex-start;
+}
+#text{width: 100px; }
+
+.leftn{
+ width: 200px;
+ height: 1000px;
+ min-height: 800px;
+ background-color: rgb(123, 207, 172);
+}
+
+
+.rightn{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: auto; 
+}
+.body{
+  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+.div-block-7{position: absolute;top: 3%;width: 100%;height: 17%;}
+#alltext1{position: absolute;left: 9%;top: 0%;width: 15%;height: 100%;}
+#alltext2{position: absolute;left: 33%;width: 15%;height: 100%;}
+#alltext3{position: absolute;left: 58%;width: 15%;height: 100%;}
+
+.div-block-8{position: absolute;top: 23%;width: 100%;height: 17%; }
+#alltext4{position: absolute;left: 9%;width: 15%;height: 100%;}
+#alltext5{position: absolute;left: 33%;width: 15%;height: 100%;}
+#alltext6{position: absolute;left: 58%;width: 15%;height: 100%;}
+
+.div-block-9{position: absolute;top:21%;bottom: auto;overflow: visible;width: 100%;height: 17%; margin-top: 200px;-webkit-align-self:auto;-ms-grid-row-align: auto;-ms-flex-item-align: auto;align-self:auto;}
+#alltext7{position: absolute;left: 9%;width: 15%;height: 100%;}
+#alltext8{position: absolute;left: 33%;width: 15%;height: 100%;}
+#alltext9{position: absolute;left: 58%;width: 15%;height: 100%;}
+
+.div-block-10{position: absolute;top: 63%;width: 100%;height: 17%; }
+#alltext10{position: absolute;left: 9%;width: 15%;height: 100%;}
+#alltext11{position: absolute;left: 33%;width: 15%;height: 100%;}
+#alltext12{position: absolute;left: 58%;width: 15%;height: 100%;}
+
+
+
+
+
+
+
+
+
+.texta{position: absolute;left: 25%;width: 16%;height: 3%;text-align: center;}
+.textb{position: absolute;left: 49%;width: 16%;height: 3%;text-align: center;}
+.textc{position: absolute;left: 74%;width: 16%;height: 3%;text-align: center;}
+
+.textd{position: absolute;left: 25%;top:20%;width: 16%;height: 3%;text-align: center;}
+.texte{position: absolute;left: 49%;top:20%;width: 16%;height: 3%;text-align: center;}
+.textf{position: absolute;left: 74%;top:20%;width: 16%;height: 3%;text-align: center;}
+
+.textg{position: absolute;left: 25%;top:40%;width: 16%;height: 3%;text-align: center;}
+.texth{position: absolute;left: 49%;top:40%;width: 16%;height: 3%;text-align: center;}
+.texti{position: absolute;left: 74%;top:40%;width: 16%;height: 3%;text-align: center;}
+
+.textj{position: absolute;left: 25%;top:60%;width: 16%;height: 3%;text-align: center;}
+.textk{position: absolute;left: 49%;top:60%;width: 16%;height: 3%;text-align: center;}
+.textl{position: absolute;left: 74%;top:60%;width: 16%;height: 3%;text-align: center;}
+
+</style>
+</head>
+<body class="body">
+  <div class="leftn">
+
+    <div id="people">人數:</div>
+    <div id="text">
+  
+    </div>
+  </div>
+<div class="rightn">
+  <div class="div-block-7">
+  <div class="box" id="alltext1"></div>
+  <div class="box" id="alltext2"></div>
+  <div class="box" id="alltext3"></div>
+</div>
+<div class="div-block-8">
+  <div class="box" id="alltext4"></div>
+  <div class="box" id="alltext5"></div>
+  <div class="box" id="alltext6"></div>
+</div>
+<div class="div-block-9">
+  <div class="box" id="alltext7"></div>
+  <div class="box" id="alltext8"></div>
+  <div class="box" id="alltext9"></div>
+</div> 
+<div class="div-block-10">
+      <div class="box" id="alltext10"></div>
+      <div class="box" id="alltext11"></div>
+      <div class="box" id="alltext12"></div>
+    </div> 
+  
+    <div class="texta" contenteditable="true">隊伍A</div>
+    <div class="textb" contenteditable="true">隊伍B</div>
+    <div class="textc" contenteditable="true">隊伍C</div>
+    <div class="textd" contenteditable="true">隊伍D</div>
+    <div class="texte" contenteditable="true">隊伍E</div>
+    <div class="textf" contenteditable="true">隊伍F</div>
+    <div class="textg" contenteditable="true">隊伍G</div>
+    <div class="texth" contenteditable="true">隊伍H</div>
+    <div class="texti" contenteditable="true">隊伍I</div>
+    <div class="textj" contenteditable="true">隊伍J</div>
+    <div class="textk" contenteditable="true">隊伍K</div>
+    <div class="textl" contenteditable="true">隊伍L</div>
+</div>
+
+<script type="text/javascript">
+
+var data =["塔可","未知料理","10月","UC","QQWC"];
+var teamA = [];
+var teamB = [];
+var teamC = [];
+var teamD = [];
+var teamE = [];
+var teamF = [];
+var teamG = [];
+var teamH = [];
+var teamI = [];
+var teamJ = [];
+var teamK = [];
+var teamL = [];
+
+function showname(){
+  var len;
+  var text = "";
+  for(len = 0; len < data.length; len++){
+    text +='<li class = "ck' + len + '"  id = "textid" onclick="deltxt('+len+')">' + data[len] +'</li>';
+}
+document.getElementById("text").innerHTML = text;
+}
+function shownameteamA(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamA.length; len++){
+    text +='<li class = "ckA' + len + '" id = "textid"  onclick="deltxtinA('+len+')">' + teamA[len] +'</li>';
+}
+document.getElementById("alltext1").innerHTML = text;
+}
+function shownameteamB(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamB.length; len++){
+    text +='<li class = "ckB' + len + '"  id = "textid" onclick="deltxtinB('+len+')">' + teamB[len] +'</li>';
+  }
+    document.getElementById("alltext2").innerHTML = text;
+  }
+
+function shownameteamC(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamC.length; len++){
+    text +='<li class = "ckC' + len + '"  id = "textid" onclick="deltxtinC('+len+')">' + teamC[len] +'</li>';
+}
+document.getElementById("alltext3").innerHTML = text;
+}
+
+function shownameteamD(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamD.length; len++){
+    text +='<li class = "ckD' + len + '"  id = "textid" onclick="deltxtinD('+len+')">' + teamD[len] +'</li>';
+}
+document.getElementById("alltext4").innerHTML = text;
+}
+
+function shownameteamE(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamE.length; len++){
+    text +='<li class = "ckE' + len + '"  id = "textid" onclick="deltxtinE('+len+')">' + teamE[len] +'</li>';
+}
+document.getElementById("alltext5").innerHTML = text;
+}
+
+function shownameteamF(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamF.length; len++){
+    text +='<li class = "ckF' + len + '"  id = "textid" onclick="deltxtinF('+len+')">' + teamF[len] +'</li>';
+}
+document.getElementById("alltext6").innerHTML = text;
+}
+
+function shownameteamG(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamG.length; len++){
+    text +='<li class = "ckG' + len + '"  id = "textid" onclick="deltxtinG('+len+')">' + teamG[len] +'</li>';
+}
+document.getElementById("alltext7").innerHTML = text;
+}
+
+function shownameteamH(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamH.length; len++){
+    text +='<li class = "ckH' + len + '"  id = "textid" onclick="deltxtinH('+len+')">' + teamH[len] +'</li>';
+}
+document.getElementById("alltext8").innerHTML = text;
+}
+
+function shownameteamI(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamI.length; len++){
+    text +='<li class = "ckI' + len + '"  id = "textid" onclick="deltxtinI('+len+')">' + teamI[len] +'</li>';
+}
+document.getElementById("alltext9").innerHTML = text;
+}
+
+function shownameteamJ(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamJ.length; len++){
+    text +='<li class = "ckJ' + len + '"  id = "textid" onclick="deltxtinJ('+len+')">' + teamJ[len] +'</li>';
+}
+document.getElementById("alltext10").innerHTML = text;
+}
+
+function shownameteamK(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamK.length; len++){
+    text +='<li class = "ckK' + len + '"  id = "textid" onclick="deltxtinK('+len+')">' + teamK[len] +'</li>';
+}
+document.getElementById("alltext11").innerHTML = text;
+}
+
+function shownameteamL(){
+  var len;
+  var text = "";
+  for(len = 0; len < teamL.length; len++){
+    text +='<li class = "ckL' + len + '"  id = "textid" onclick="deltxtinL('+len+')">' + teamL[len] +'</li>';
+}
+document.getElementById("alltext12").innerHTML = text;
+}
+
+
+
+
+
+
+
+
+function deltxt(id){
+
+ var DX2 =data.indexOf($('.ck' + id).text());
+ if ( $('#alltext1').css('background-color') == 'rgb(100, 149, 237)') {
+  teamA.push($('.ck' + id).text());
+  console.log("teamA:"+teamA);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamA();
+   shownumber ();
+ }  
+ if ( $('#alltext2').css('background-color') == 'rgb(100, 149, 237)') {
+  teamB.push($('.ck' + id).text());
+  console.log("teamB:"+teamB);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamB();
+   shownumber ();
+ }  
+ if ( $('#alltext3').css('background-color') == 'rgb(100, 149, 237)') {
+  teamC.push($('.ck' + id).text());
+  console.log("teamC:"+teamC);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamC();
+   shownumber ();
+ }
+
+ if ( $('#alltext4').css('background-color') == 'rgb(100, 149, 237)') {
+  teamD.push($('.ck' + id).text());
+  console.log("teamD:"+teamD);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamD();
+   shownumber ();
+ }
+
+ if ( $('#alltext5').css('background-color') == 'rgb(100, 149, 237)') {
+  teamE.push($('.ck' + id).text());
+  console.log("teamE:"+teamE);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamE();
+   shownumber ();
+ }
+
+ if ( $('#alltext6').css('background-color') == 'rgb(100, 149, 237)') {
+  teamF.push($('.ck' + id).text());
+  console.log("teamF:"+teamF);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamF();
+   shownumber ();
+ }
+
+ if ( $('#alltext7').css('background-color') == 'rgb(100, 149, 237)') {
+  teamG.push($('.ck' + id).text());
+  console.log("teamG:"+teamG);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamG();
+   shownumber ();
+ }
+
+ if ( $('#alltext8').css('background-color') == 'rgb(100, 149, 237)') {
+  teamH.push($('.ck' + id).text());
+  console.log("teamH:"+teamH);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamH();
+   shownumber ();
+ }
+
+ if ( $('#alltext9').css('background-color') == 'rgb(100, 149, 237)') {
+  teamI.push($('.ck' + id).text());
+  console.log("teamI:"+teamI);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamI();
+   shownumber ();
+ }
+
+ if ( $('#alltext10').css('background-color') == 'rgb(100, 149, 237)') {
+  teamJ.push($('.ck' + id).text());
+  console.log("teamJ:"+teamJ);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamJ();
+   shownumber ();
+ }
+
+ if ( $('#alltext11').css('background-color') == 'rgb(100, 149, 237)') {
+  teamK.push($('.ck' + id).text());
+  console.log("teamK:"+teamK);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamK();
+   shownumber ();
+ }
+
+ if ( $('#alltext12').css('background-color') == 'rgb(100, 149, 237)') {
+  teamL.push($('.ck' + id).text());
+  console.log("teamL:"+teamL);
+  data.splice(DX2, 1);
+   console.log("data:" + data);
+   $(".ck" + id).remove(); 
+   shownameteamL();
+   shownumber ();
+ }
+}
+//隊伍內部名單刪除
+function deltxtinA(id){
+  var DXA =teamA.indexOf($('.ckA' + id).text());
+  
+  if ( $('#alltext1').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckA' + id).text());
+    teamA.splice(DXA, 1);
+   console.log("teamA:"+teamA);
+   console.log("data:" + data);
+   $(".ckA" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+function deltxtinB(id){
+  var DXB =teamB.indexOf($('.ckB' + id).text());
+  
+  if ( $('#alltext2').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckB' + id).text());
+    teamB.splice(DXB, 1);
+   console.log("teamB:"+teamB);
+   console.log("data:" + data);
+   $(".ckB" + id).remove(); 
+  }
+  showname();
+  shownumber();
+}
+
+function deltxtinC(id){
+  var DXC =teamC.indexOf($('.ckC' + id).text());
+  
+  if ( $('#alltext3').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckC' + id).text());
+    teamC.splice(DXC, 1);
+   console.log("teamC:"+teamC);
+   console.log("data:" + data);
+   $(".ckC" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinD(id){
+  var DXD =teamD.indexOf($('.ckD' + id).text());
+  
+  if ( $('#alltext4').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckD' + id).text());
+    teamD.splice(DXD, 1);
+   console.log("teamD:"+teamD);
+   console.log("data:" + data);
+   $(".ckD" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinE(id){
+  var DXE =teamE.indexOf($('.ckE' + id).text());
+  
+  if ( $('#alltext5').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckE' + id).text());
+    teamE.splice(DXE, 1);
+   console.log("teamE:"+teamE);
+   console.log("data:" + data);
+   $(".ckE" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinF(id){
+  var DXF =teamF.indexOf($('.ckF' + id).text());
+  
+  if ( $('#alltext6').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckF' + id).text());
+    teamF.splice(DXF, 1);
+   console.log("teamF:"+teamF);
+   console.log("data:" + data);
+   $(".ckF" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinG(id){
+  var DXG =teamG.indexOf($('.ckG' + id).text());
+  
+  if ( $('#alltext7').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckG' + id).text());
+    teamG.splice(DXG, 1);
+   console.log("teamG:"+teamG);
+   console.log("data:" + data);
+   $(".ckG" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinH(id){
+  var DXH =teamH.indexOf($('.ckH' + id).text());
+  
+  if ( $('#alltext8').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckH' + id).text());
+    teamH.splice(DXH, 1);
+   console.log("teamH:"+teamH);
+   console.log("data:" + data);
+   $(".ckH" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinI(id){
+  var DXI =teamI.indexOf($('.ckI' + id).text());
+  
+  if ( $('#alltext9').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckI' + id).text());
+    teamI.splice(DXI, 1);
+   console.log("teamI:"+teamI);
+   console.log("data:" + data);
+   $(".ckI" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinJ(id){
+  var DXJ =teamJ.indexOf($('.ckJ' + id).text());
+  
+  if ( $('#alltext10').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckJ' + id).text());
+    teamJ.splice(DXJ, 1);
+   console.log("teamJ:"+teamJ);
+   console.log("data:" + data);
+   $(".ckJ" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinK(id){
+  var DXK =teamK.indexOf($('.ckK' + id).text());
+  
+  if ( $('#alltext11').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckK' + id).text());
+    teamK.splice(DXK, 1);
+   console.log("teamK:"+teamK);
+   console.log("data:" + data);
+   $(".ckK" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+
+function deltxtinL(id){
+  var DXL =teamL.indexOf($('.ckL' + id).text());
+  
+  if ( $('#alltext12').css('background-color') == 'rgb(100, 149, 237)' ){
+    data.push($('.ckL' + id).text());
+    teamL.splice(DXL, 1);
+   console.log("teamL:"+teamL);
+   console.log("data:" + data);
+   $(".ckL" + id).remove(); 
+  }
+  showname();
+  shownumber ();
+}
+//典籍外部取消鎖定
+window.addEventListener('click', function(e){
+  
+  if (document.getElementById('alltext1').contains(e.target)){
+    // Clicked in box
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext1').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext2').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext2').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext3').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext3').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext4').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext4').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext5').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext5').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext6').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext6').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext7').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext7').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext8').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext8').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext9').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext9').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext10').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext10').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext11').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext11').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (document.getElementById('alltext12').contains(e.target) ){
+    $('.box').css("background-color","rgb(128, 255, 212)");
+    $('#alltext12').css("background-color","rgb(100, 149, 237)")
+  }
+  else if (e.target.id != 'alltext1' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext2' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext3' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext4' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext5' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext6' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext7' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext8' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext9' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext10' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext11' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+  else if (e.target.id != 'alltext12' && e.target.id != 'textid'){
+    $('.box').css("background-color","rgb(128, 255, 212)")
+  }
+ });
+
+  function shownumber (){
+    var datanumber = data.length;
+    document.getElementById("people").innerHTML = "人數:" + datanumber + "/86";
+  }
+showname();
+shownumber();
+
+      
+</script>
+</body>
+</html>
