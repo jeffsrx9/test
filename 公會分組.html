@@ -41,7 +41,7 @@
 
 
 .div-block-7{position: absolute;top: 3%;width: 100%;height: 17%;}
-#alltext1{position: absolute;left: 9%;top: 0%;width: 15%;height: 100%;}
+#alltext1{position: absolute;left: 9%;top: 0%;width: 15%;height: 100%;text-overflow: ellipsis; overflow: hidden;  display: block; white-space: nowrap;}
 #alltext2{position: absolute;left: 33%;width: 15%;height: 100%;}
 #alltext3{position: absolute;left: 58%;width: 15%;height: 100%;}
 
@@ -134,8 +134,8 @@
 
 var data =["骰子","CSOline2","未知料理","Devi1","Oncorhynchus(鮭)",
             "嵐零","喵星","京都伏見","上善弱水","雨境",
-            "狂月巴","Libeccit(南西)","舞鶴(Maizuru)","ckkkh","十月-豆頁又痛了...",
-            "性感屁股","笨撚柒","宮村","啊打打打(負債教主","用監聽耳機的GY",
+            "狂月巴","Libeccit(南西)","舞鶴(Maizuru)","ckkkh","十月瀟湘儘放梅",
+            "性感屁股","笨撚柒","宮村","啊打打打","用監聽耳機的GY",
             "悠星","全村的絕望","DaGoGo","QQWC","22-閉口禪",
             "骸梅十穗","AK冒險團","Eji","乂瘋狂小丑乂","塔可","Spirito口o"];
 var teamA = [];
@@ -162,9 +162,11 @@ document.getElementById("text").innerHTML = text;
 function shownameteamA(){
   var len;
   var text = "";
+
   for(len = 0; len < teamA.length; len++){
     text +='<li class = "ckA' + len + '" id = "textid"  onclick="deltxtinA('+len+')">' + teamA[len] +'</li>';
-}
+} 
+
 document.getElementById("alltext1").innerHTML = text;
 }
 function shownameteamB(){
@@ -277,6 +279,7 @@ function deltxt(id){
 
  var DX2 =data.indexOf($('.ck' + id).text());
  if ( $('#alltext1').css('background-color') == 'rgb(100, 149, 237)') {
+   if(teamA.length<5){
   teamA.push($('.ck' + id).text());
   console.log("teamA:"+teamA);
   data.splice(DX2, 1);
@@ -284,114 +287,126 @@ function deltxt(id){
    $(".ck" + id).remove(); 
    shownameteamA();
    shownumber ();
+   }
  }  
  if ( $('#alltext2').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamB.length<5){
   teamB.push($('.ck' + id).text());
   console.log("teamB:"+teamB);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamB();
-   shownumber ();
+   shownumber ();}
  }  
  if ( $('#alltext3').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamC.length<5){
   teamC.push($('.ck' + id).text());
   console.log("teamC:"+teamC);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamC();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext4').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamD.length<5){
   teamD.push($('.ck' + id).text());
   console.log("teamD:"+teamD);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamD();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext5').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamE.length<5){
   teamE.push($('.ck' + id).text());
   console.log("teamE:"+teamE);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamE();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext6').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamF.length<5){
   teamF.push($('.ck' + id).text());
   console.log("teamF:"+teamF);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamF();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext7').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamG.length<5){
   teamG.push($('.ck' + id).text());
   console.log("teamG:"+teamG);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamG();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext8').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamH.length<5){
   teamH.push($('.ck' + id).text());
   console.log("teamH:"+teamH);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamH();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext9').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamI.length<5){
   teamI.push($('.ck' + id).text());
   console.log("teamI:"+teamI);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamI();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext10').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamJ.length<5){
   teamJ.push($('.ck' + id).text());
   console.log("teamJ:"+teamJ);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamJ();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext11').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamK.length<5){
   teamK.push($('.ck' + id).text());
   console.log("teamK:"+teamK);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamK();
-   shownumber ();
+   shownumber ();}
  }
 
  if ( $('#alltext12').css('background-color') == 'rgb(100, 149, 237)') {
+  if(teamL.length<5){
   teamL.push($('.ck' + id).text());
   console.log("teamL:"+teamL);
   data.splice(DX2, 1);
    console.log("data:" + data);
    $(".ck" + id).remove(); 
    shownameteamL();
-   shownumber ();
+   shownumber ();}
  }
 }
 //隊伍內部名單刪除
