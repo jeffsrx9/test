@@ -8,43 +8,39 @@
 
 <style type="text/css">
 .box {
-    width: 100px;
-    height: 100px;
     background: rgb(128, 255, 212);
-    margin: auto;
-    align-items: flex-start;
 }
-#text{ white-space:nowrap;font-size:14pt; line-height:200% }
+#text{ font-weight:bold;padding-left: auto;white-space:nowrap;height: 1024px;font-size:14pt; line-height:200% ; }
 
+#people{
+  text-align: center;font-weight:bold;height: 3%;
+}
 .leftn{
   position: relative;
 width: 20%;
  height: 1024px;
-
+ overflow: auto;
  background-color: rgb(123, 207, 172);
 }
 
-
+#word{
+  padding-left: 10%;font-weight:bold;font-size:14pt;
+}
 .rightn{
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+ 
   width: 100%;
-  height: auto; 
+   
   
 }
 .body{
-  display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+ 
     display: flex;
 }
 
 
 .div-block-7{position: absolute;top: 3%;width: 100%;height: 17%;}
-#alltext1{position: absolute;left: 4%;width: 20%;height: 100%;text-overflow: ellipsis; overflow: hidden;  display: block; white-space: nowrap;}
+#alltext1{position: absolute;left: 4%;width: 20%;height: 100%;}
 #alltext2{position: absolute;left: 28%;width: 20%;height: 100%;}
 #alltext3{position: absolute;left: 52%;width: 20%;height: 100%;}
 #alltext32{position: absolute;left: 76%;width: 20%;height: 100%;}
@@ -75,37 +71,36 @@ width: 20%;
 
 
 
-.div-text-1{width: 100%;height: 3%;text-align: center;}
+.div-text-1{width: 100%;height: 3%;text-align: center;font-weight:bold;font-size:14pt;}
 .text-1n{position: absolute;left: 4%;width: 20%;height: 3%;}
 .text2n{position: absolute;left: 28%;width: 20%;height: 3%;}
 .text3n{position: absolute;left: 52%;width: 20%;height: 3%;}
 .text4n{position: absolute;left: 76%;width: 20%;height: 3%;}
 
-.div-block-12{position: absolute;top: 20%;width: 100%;height: 3%;text-align: center;}
-.text5n{position: absolute;left: 4%;width: 20%;height: 3%;}
-.text6n{position: absolute;left: 28%;width: 20%;height: 3%;}
-.text7n{position: absolute;left: 52%;width: 20%;height: 3%;}
-.text8n{position: absolute;left: 76%;width: 20%;height: 3%;}
+.div-block-12{position: absolute;top: 20%;width: 100%;height: 3%;text-align: center;font-weight:bold;font-size:14pt;}
+.text5n{position: absolute;left: 4%;width: 20%;height: 100%;}
+.text6n{position: absolute;left: 28%;width: 20%;height: 100%;}
+.text7n{position: absolute;left: 52%;width: 20%;height: 100%;}
+.text8n{position: absolute;left: 76%;width: 20%;height: 100%;}
 
-.div-block-13{position: absolute;top: 40%;width: 100%;height: 3%;text-align: center;}
-.text9n{position: absolute;left: 4%;width: 20%;height: 3%;}
-.text10n{position: absolute;left: 28%;width: 20%;height: 3%;}
-.text11n{position: absolute;left: 52%;width: 20%;height: 3%;}
-.text12n{position: absolute;left: 76%;width: 20%;height: 3%;}
+.div-block-13{position: absolute;top: 40%;width: 100%;height: 3%;text-align: center;font-weight:bold;font-size:14pt;}
+.text9n{position: absolute;left: 4%;width: 20%;height: 100%;}
+.text10n{position: absolute;left: 28%;width: 20%;height: 100%;}
+.text11n{position: absolute;left: 52%;width: 20%;height: 100%;}
+.text12n{position: absolute;left: 76%;width: 20%;height: 100%;}
 
 
-.div-block-14{position: absolute;top: 60%;width: 100%;height: 3%;text-align: center;}
-.text13n{position: absolute;left: 4%;width: 20%;height: 3%;}
-.text14n{position: absolute;left: 28%;width: 20%;height: 3%;}
-.text15n{position: absolute;left: 52%;width: 20%;height: 3%;}
-.text16n{position: absolute;left: 76%;width: 20%;height: 3%;}
+.div-block-14{position: absolute;top: 60%;width: 100%;height: 3%;text-align: center;font-weight:bold;font-size:14pt;}
+.text13n{position: absolute;left: 4%;width: 20%;height: 100%;}
+.text14n{position: absolute;left: 28%;width: 20%;height: 100%;}
+.text15n{position: absolute;left: 52%;width: 20%;height: 100%;}
+.text16n{position: absolute;left: 76%;width: 20%;height: 100%;}
 
-.div-block-15{position: absolute;top: 80%;width: 100%;height: 3%;text-align: center;}
-.text17n{position: absolute;left: 4%;width: 20%;height: 3%;}
-.text18n{position: absolute;left: 28%;width: 20%;height: 3%;}
-.text19n{position: absolute;left: 52%;width: 20%;height: 3%;}
-.text20n{position: absolute;left: 76%;width: 20%;height: 3%;}
-
+.div-block-15{position: absolute;top: 80%;width: 100%;height: 3%;text-align: center;font-weight:bold;font-size:14pt;}
+.text17n{position: absolute;left: 4%;width: 20%;height: 100%;}
+.text18n{position: absolute;left: 28%;width: 20%;height: 100%;}
+.text19n{position: absolute;left: 52%;width: 20%;height: 100%;}
+.text20n{position: absolute;left: 76%;width: 20%;height: 100%;}
 
 
 
@@ -120,11 +115,17 @@ width: 20%;
 </head>
 <body class="body">
   <div class="leftn">
-
     <div id="people">人數:</div>
-    <div id="text">
-  
+    <div>
+      搜尋：<input type="search" class="light-table-filter" id="word" data-table="order-table" placeholder="請輸入關鍵字">
     </div>
+    <div>
+    <table class="order-table"  >
+      <tbody id="text">
+
+      </tbody>
+    </table>
+  </div>
   </div>
 <div class="rightn">
   <div class="div-block-7">
@@ -158,34 +159,34 @@ width: 20%;
       <div class="box" id="alltext152"></div>
     </div>
   <div class="div-text-1">
-    <div class="text-1n" contenteditable="true">隊伍1</div>
-    <div class="text2n" contenteditable="true">隊伍2</div>
-    <div class="text3n" contenteditable="true">隊伍3</div>
-    <div class="text4n" contenteditable="true">隊伍4</div>
+    <div class="text-1n" contenteditable="true">紅1</div>
+    <div class="text2n" contenteditable="true">紅2</div>
+    <div class="text3n" contenteditable="true">紅3</div>
+    <div class="text4n" contenteditable="true">紅4</div>
 </div>
 <div class="div-block-12">
-  <div class="text5n" contenteditable="true">隊伍1</div>
-  <div class="text6n" contenteditable="true">隊伍2</div>
-  <div class="text7n" contenteditable="true">隊伍3</div>
-  <div class="text8n" contenteditable="true">隊伍4</div>
+  <div class="text5n" contenteditable="true">藍1</div>
+  <div class="text6n" contenteditable="true">藍2</div>
+  <div class="text7n" contenteditable="true">藍3</div>
+  <div class="text8n" contenteditable="true">藍4</div>
 </div>
 <div class="div-block-13">
-  <div class="text9n" contenteditable="true">隊伍1</div>
-  <div class="text10n" contenteditable="true">隊伍2</div>
-  <div class="text11n" contenteditable="true">隊伍3</div>
-  <div class="text12n" contenteditable="true">隊伍4</div>
+  <div class="text9n" contenteditable="true">白1</div>
+  <div class="text10n" contenteditable="true">白2</div>
+  <div class="text11n" contenteditable="true">白3</div>
+  <div class="text12n" contenteditable="true">白4</div>
 </div>
 <div class="div-block-14">
-  <div class="text13n" contenteditable="true">隊伍1</div>
-  <div class="text14n" contenteditable="true">隊伍2</div>
-  <div class="text15n" contenteditable="true">隊伍3</div>
-  <div class="text16n" contenteditable="true">隊伍4</div>
+  <div class="text13n" contenteditable="true">紫1</div>
+  <div class="text14n" contenteditable="true">紫2</div>
+  <div class="text15n" contenteditable="true">紫3</div>
+  <div class="text16n" contenteditable="true">紫4</div>
 </div>
 <div class="div-block-15">
-  <div class="text17n" contenteditable="true">隊伍1</div>
-  <div class="text18n" contenteditable="true">隊伍2</div>
-  <div class="text19n" contenteditable="true">隊伍3</div>
-  <div class="text20n" contenteditable="true">隊伍4</div>
+  <div class="text17n" contenteditable="true">綠1</div>
+  <div class="text18n" contenteditable="true">綠2</div>
+  <div class="text19n" contenteditable="true">綠3</div>
+  <div class="text20n" contenteditable="true">綠4</div>
 </div>
 
 
@@ -222,11 +223,60 @@ var teamL2 =[];
 var teamM= [];
 var teamN = [];
 var teamO = [];///////////8/10
+
+
+
+(function(document) {
+  'use strict';
+
+  // 建立 LightTableFilter
+  var LightTableFilter = (function(Arr) {
+
+    var _input;
+
+    // 資料輸入事件處理函數
+    function _onInputEvent(e) {
+      _input = e.target;
+      var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+      Arr.forEach.call(tables, function(table) {
+        Arr.forEach.call(table.tBodies, function(tbody) {
+          Arr.forEach.call(tbody.rows, _filter);
+        });
+      });
+    }
+
+    // 資料篩選函數，顯示包含關鍵字的列，其餘隱藏
+    function _filter(row) {
+      var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+      row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+    }
+
+    return {
+      // 初始化函數
+      init: function() {
+        var inputs = document.getElementsByClassName('light-table-filter');
+        Arr.forEach.call(inputs, function(input) {
+          input.oninput = _onInputEvent;
+        });
+      }
+    };
+  })(Array.prototype);
+
+  // 網頁載入完成後，啟動 LightTableFilter
+  document.addEventListener('readystatechange', function() {
+    if (document.readyState === 'complete') {
+      LightTableFilter.init();
+    }
+  });
+
+})(document);
+
+
 function showname(){
   var len;
   var text = "";
   for(len = 0; len < data.length; len++){
-    text +='<li class = "ck' + len + '"  id = "textid" onclick="deltxt('+len+')">' + data[len] +'</li>';
+    text +='<tr class = "ck' + len + '"   onclick="deltxt('+len+')">' + '<td id = "word">'+data[len] +'</td>' +'</tr>';
 }
 document.getElementById("text").innerHTML = text;
 }
@@ -235,7 +285,7 @@ function shownameteamA(){
   var text = "";
 
   for(len = 0; len < teamA.length; len++){
-    text +='<li class = "ckA' + len + '" id = "textid"  onclick="deltxtinA('+len+')">' + teamA[len] +'</li>';
+    text +='<li class = "ckA' + len + '" id = "word"  onclick="deltxtinA('+len+')">' + teamA[len] +'</li>';
 } 
 
 document.getElementById("alltext1").innerHTML = text;
@@ -244,7 +294,7 @@ function shownameteamB(){
   var len;
   var text = "";
   for(len = 0; len < teamB.length; len++){
-    text +='<li class = "ckB' + len + '"  id = "textid" onclick="deltxtinB('+len+')">' + teamB[len] +'</li>';
+    text +='<li class = "ckB' + len + '"  id = "word" onclick="deltxtinB('+len+')">' + teamB[len] +'</li>';
   }
     document.getElementById("alltext2").innerHTML = text;
   }
@@ -253,7 +303,7 @@ function shownameteamC(){
   var len;
   var text = "";
   for(len = 0; len < teamC.length; len++){
-    text +='<li class = "ckC' + len + '"  id = "textid" onclick="deltxtinC('+len+')">' + teamC[len] +'</li>';
+    text +='<li class = "ckC' + len + '"  id = "word" onclick="deltxtinC('+len+')">' + teamC[len] +'</li>';
 }
 document.getElementById("alltext3").innerHTML = text;
 }
@@ -262,7 +312,7 @@ function shownameteamC2(){
   var len;
   var text = "";
   for(len = 0; len < teamC2.length; len++){
-    text +='<li class = "ck2' + len + '"  id = "textid" onclick="deltxtinC2('+len+')">' + teamC2[len] +'</li>';
+    text +='<li class = "ckC2' + len + '"  id = "word" onclick="deltxtinC2('+len+')">' + teamC2[len] +'</li>';
 }
 document.getElementById("alltext32").innerHTML = text;
 }
@@ -271,7 +321,7 @@ function shownameteamD(){
   var len;
   var text = "";
   for(len = 0; len < teamD.length; len++){
-    text +='<li class = "ckD' + len + '"  id = "textid" onclick="deltxtinD('+len+')">' + teamD[len] +'</li>';
+    text +='<li class = "ckD' + len + '"  id = "word" onclick="deltxtinD('+len+')">' + teamD[len] +'</li>';
 }
 document.getElementById("alltext4").innerHTML = text;
 }
@@ -280,7 +330,7 @@ function shownameteamE(){
   var len;
   var text = "";
   for(len = 0; len < teamE.length; len++){
-    text +='<li class = "ckE' + len + '"  id = "textid" onclick="deltxtinE('+len+')">' + teamE[len] +'</li>';
+    text +='<li class = "ckE' + len + '"  id = "word" onclick="deltxtinE('+len+')">' + teamE[len] +'</li>';
 }
 document.getElementById("alltext5").innerHTML = text;
 }
@@ -289,7 +339,7 @@ function shownameteamF(){
   var len;
   var text = "";
   for(len = 0; len < teamF.length; len++){
-    text +='<li class = "ckF' + len + '"  id = "textid" onclick="deltxtinF('+len+')">' + teamF[len] +'</li>';
+    text +='<li class = "ckF' + len + '"  id = "word" onclick="deltxtinF('+len+')">' + teamF[len] +'</li>';
 }
 document.getElementById("alltext6").innerHTML = text;
 }
@@ -298,7 +348,7 @@ function shownameteamF2(){
   var len;
   var text = "";
   for(len = 0; len < teamF2.length; len++){
-    text +='<li class = "ckF2' + len + '"  id = "textid" onclick="deltxtinF2('+len+')">' + teamF2[len] +'</li>';
+    text +='<li class = "ckF2' + len + '"  id = "word" onclick="deltxtinF2('+len+')">' + teamF2[len] +'</li>';
 }
 document.getElementById("alltext62").innerHTML = text;
 }
@@ -307,7 +357,7 @@ function shownameteamG(){
   var len;
   var text = "";
   for(len = 0; len < teamG.length; len++){
-    text +='<li class = "ckG' + len + '"  id = "textid" onclick="deltxtinG('+len+')">' + teamG[len] +'</li>';
+    text +='<li class = "ckG' + len + '"  id = "word" onclick="deltxtinG('+len+')">' + teamG[len] +'</li>';
 }
 document.getElementById("alltext7").innerHTML = text;
 }
@@ -316,7 +366,7 @@ function shownameteamH(){
   var len;
   var text = "";
   for(len = 0; len < teamH.length; len++){
-    text +='<li class = "ckH' + len + '"  id = "textid" onclick="deltxtinH('+len+')">' + teamH[len] +'</li>';
+    text +='<li class = "ckH' + len + '"  id = "word" onclick="deltxtinH('+len+')">' + teamH[len] +'</li>';
 }
 document.getElementById("alltext8").innerHTML = text;
 }
@@ -325,7 +375,7 @@ function shownameteamI(){
   var len;
   var text = "";
   for(len = 0; len < teamI.length; len++){
-    text +='<li class = "ckI' + len + '"  id = "textid" onclick="deltxtinI('+len+')">' + teamI[len] +'</li>';
+    text +='<li class = "ckI' + len + '"  id = "word" onclick="deltxtinI('+len+')">' + teamI[len] +'</li>';
 }
 document.getElementById("alltext9").innerHTML = text;
 }
@@ -334,7 +384,7 @@ function shownameteamI2(){
   var len;
   var text = "";
   for(len = 0; len < teamI2.length; len++){
-    text +='<li class = "ckI2' + len + '"  id = "textid" onclick="deltxtinI2('+len+')">' + teamI2[len] +'</li>';
+    text +='<li class = "ckI2' + len + '"  id = "word" onclick="deltxtinI2('+len+')">' + teamI2[len] +'</li>';
 }
 document.getElementById("alltext92").innerHTML = text;
 }
@@ -343,7 +393,7 @@ function shownameteamJ(){
   var len;
   var text = "";
   for(len = 0; len < teamJ.length; len++){
-    text +='<li class = "ckJ' + len + '"  id = "textid" onclick="deltxtinJ('+len+')">' + teamJ[len] +'</li>';
+    text +='<li class = "ckJ' + len + '"  id = "word" onclick="deltxtinJ('+len+')">' + teamJ[len] +'</li>';
 }
 document.getElementById("alltext10").innerHTML = text;
 }
@@ -352,7 +402,7 @@ function shownameteamK(){
   var len;
   var text = "";
   for(len = 0; len < teamK.length; len++){
-    text +='<li class = "ckK' + len + '"  id = "textid" onclick="deltxtinK('+len+')">' + teamK[len] +'</li>';
+    text +='<li class = "ckK' + len + '"  id = "word" onclick="deltxtinK('+len+')">' + teamK[len] +'</li>';
 }
 document.getElementById("alltext11").innerHTML = text;
 }
@@ -361,7 +411,7 @@ function shownameteamL(){
   var len;
   var text = "";
   for(len = 0; len < teamL.length; len++){
-    text +='<li class = "ckL' + len + '"  id = "textid" onclick="deltxtinL('+len+')">' + teamL[len] +'</li>';
+    text +='<li class = "ckL' + len + '"  id = "word" onclick="deltxtinL('+len+')">' + teamL[len] +'</li>';
 }
 document.getElementById("alltext12").innerHTML = text;
 }
@@ -370,7 +420,7 @@ function shownameteamL2(){
   var len;
   var text = "";
   for(len = 0; len < teamL2.length; len++){
-    text +='<li class = "ckL2' + len + '"  id = "textid" onclick="deltxtinL2('+len+')">' + teamL2[len] +'</li>';
+    text +='<li class = "ckL2' + len + '"  id = "word" onclick="deltxtinL2('+len+')">' + teamL2[len] +'</li>';
 }
 document.getElementById("alltext122").innerHTML = text;
 }
@@ -379,7 +429,7 @@ function shownameteamM(){
   var len;
   var text = "";
   for(len = 0; len < teamM.length; len++){
-    text +='<li class = "ckM' + len + '"  id = "textid" onclick="deltxtinM('+len+')">' + teamM[len] +'</li>';
+    text +='<li class = "ckM' + len + '"  id = "word" onclick="deltxtinM('+len+')">' + teamM[len] +'</li>';
 }
 document.getElementById("alltext13").innerHTML = text;
 }
@@ -388,7 +438,7 @@ function shownameteamN(){
   var len;
   var text = "";
   for(len = 0; len < teamN.length; len++){
-    text +='<li class = "ckN' + len + '"  id = "textid" onclick="deltxtinN('+len+')">' + teamN[len] +'</li>';
+    text +='<li class = "ckN' + len + '"  id = "word" onclick="deltxtinN('+len+')">' + teamN[len] +'</li>';
 }
 document.getElementById("alltext14").innerHTML = text;
 }
@@ -398,7 +448,7 @@ function shownameteamO(){
   var len;
   var text = "";
   for(len = 0; len < teamO.length; len++){
-    text +='<li class = "ckO' + len + '"  id = "textid" onclick="deltxtinO('+len+')">' + teamO[len] +'</li>';
+    text +='<li class = "ckO' + len + '"  id = "word" onclick="deltxtinO('+len+')">' + teamO[len] +'</li>';
 }
 document.getElementById("alltext15").innerHTML = text;
 }
@@ -407,7 +457,7 @@ function shownameteamO2(){
   var len;
   var text = "";
   for(len = 0; len < teamO2.length; len++){
-    text +='<li class = "ckO2' + len + '"  id = "textid" onclick="deltxtinO2('+len+')">' + teamO2[len] +'</li>';
+    text +='<li class = "ckO2' + len + '"  id = "word" onclick="deltxtinO2('+len+')">' + teamO2[len] +'</li>';
 }
 document.getElementById("alltext152").innerHTML = text;
 }
@@ -643,7 +693,7 @@ function deltxtinA(id){
   var DXA =teamA.indexOf($('.ckA' + id).text());
   
   if ( $('#alltext1').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckA' + id).text());
+    data.unshift($('.ckA' + id).text());
     teamA.splice(DXA, 1);
    console.log("teamA:"+teamA);
    console.log("data:" + data);
@@ -656,7 +706,7 @@ function deltxtinB(id){
   var DXB =teamB.indexOf($('.ckB' + id).text());
   
   if ( $('#alltext2').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckB' + id).text());
+    data.unshift($('.ckB' + id).text());
     teamB.splice(DXB, 1);
    console.log("teamB:"+teamB);
    console.log("data:" + data);
@@ -670,7 +720,7 @@ function deltxtinC(id){
   var DXC =teamC.indexOf($('.ckC' + id).text());
   
   if ( $('#alltext3').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckC' + id).text());
+    data.unshift($('.ckC' + id).text());
     teamC.splice(DXC, 1);
    console.log("teamC:"+teamC);
    console.log("data:" + data);
@@ -684,11 +734,11 @@ function deltxtinC2(id){
   var DXC2 =teamC2.indexOf($('.ckC2' + id).text());
   
   if ( $('#alltext32').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckC2' + id).text());
+    data.unshift($('.ckC2' + id).text());
     teamC2.splice(DXC2, 1);
    console.log("teamC2:"+teamC2);
    console.log("data:" + data);
-   $(".ckC" + id).remove(); 
+   $(".ckC2" + id).remove(); 
   }
   showname();
   shownumber ();
@@ -698,7 +748,7 @@ function deltxtinD(id){
   var DXD =teamD.indexOf($('.ckD' + id).text());
   
   if ( $('#alltext4').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckD' + id).text());
+    data.unshift($('.ckD' + id).text());
     teamD.splice(DXD, 1);
    console.log("teamD:"+teamD);
    console.log("data:" + data);
@@ -712,7 +762,7 @@ function deltxtinE(id){
   var DXE =teamE.indexOf($('.ckE' + id).text());
   
   if ( $('#alltext5').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckE' + id).text());
+    data.unshift($('.ckE' + id).text());
     teamE.splice(DXE, 1);
    console.log("teamE:"+teamE);
    console.log("data:" + data);
@@ -726,7 +776,7 @@ function deltxtinF(id){
   var DXF =teamF.indexOf($('.ckF' + id).text());
   
   if ( $('#alltext6').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckF' + id).text());
+    data.unshift($('.ckF' + id).text());
     teamF.splice(DXF, 1);
    console.log("teamF:"+teamF);
    console.log("data:" + data);
@@ -739,7 +789,7 @@ function deltxtinF2(id){
   var DXF2 =teamF2.indexOf($('.ckF2' + id).text());
   
   if ( $('#alltext62').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckF' + id).text());
+    data.unshift($('.ckF' + id).text());
     teamF2.splice(DXF2, 1);
    console.log("teamF2:"+teamF2);
    console.log("data:" + data);
@@ -753,7 +803,7 @@ function deltxtinG(id){
   var DXG =teamG.indexOf($('.ckG' + id).text());
   
   if ( $('#alltext7').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckG' + id).text());
+    data.unshift($('.ckG' + id).text());
     teamG.splice(DXG, 1);
    console.log("teamG:"+teamG);
    console.log("data:" + data);
@@ -767,7 +817,7 @@ function deltxtinH(id){
   var DXH =teamH.indexOf($('.ckH' + id).text());
   
   if ( $('#alltext8').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckH' + id).text());
+    data.unshift($('.ckH' + id).text());
     teamH.splice(DXH, 1);
    console.log("teamH:"+teamH);
    console.log("data:" + data);
@@ -781,7 +831,7 @@ function deltxtinI(id){
   var DXI =teamI.indexOf($('.ckI' + id).text());
   
   if ( $('#alltext9').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckI' + id).text());
+    data.unshift($('.ckI' + id).text());
     teamI.splice(DXI, 1);
    console.log("teamI:"+teamI);
    console.log("data:" + data);
@@ -795,7 +845,7 @@ function deltxtinI2(id){
   var DXI2 =teamI2.indexOf($('.ckI2' + id).text());
   
   if ( $('#alltext92').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckI2' + id).text());
+    data.unshift($('.ckI2' + id).text());
     teamI2.splice(DXI2, 1);
    console.log("teamI2:"+teamI2);
    console.log("data:" + data);
@@ -809,7 +859,7 @@ function deltxtinJ(id){
   var DXJ =teamJ.indexOf($('.ckJ' + id).text());
   
   if ( $('#alltext10').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckJ' + id).text());
+    data.unshift($('.ckJ' + id).text());
     teamJ.splice(DXJ, 1);
    console.log("teamJ:"+teamJ);
    console.log("data:" + data);
@@ -823,7 +873,7 @@ function deltxtinK(id){
   var DXK =teamK.indexOf($('.ckK' + id).text());
   
   if ( $('#alltext11').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckK' + id).text());
+    data.unshift($('.ckK' + id).text());
     teamK.splice(DXK, 1);
    console.log("teamK:"+teamK);
    console.log("data:" + data);
@@ -837,7 +887,7 @@ function deltxtinL(id){
   var DXL =teamL.indexOf($('.ckL' + id).text());
   
   if ( $('#alltext12').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckL' + id).text());
+    data.unshift($('.ckL' + id).text());
     teamL.splice(DXL, 1);
    console.log("teamL:"+teamL);
    console.log("data:" + data);
@@ -851,7 +901,7 @@ function deltxtinL2(id){
   var DXL2 =teamL2.indexOf($('.ckL2' + id).text());
   
   if ( $('#alltext122').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckL2' + id).text());
+    data.unshift($('.ckL2' + id).text());
     teamL2.splice(DXL2, 1);
    console.log("teamL2:"+teamL2);
    console.log("data:" + data);
@@ -865,7 +915,7 @@ function deltxtinM(id){
   var DXM =teamM.indexOf($('.ckM' + id).text());
   
   if ( $('#alltext13').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckM' + id).text());
+    data.unshift($('.ckM' + id).text());
     teamM.splice(DXM, 1);
    console.log("teamM:"+teamM);
    console.log("data:" + data);
@@ -878,7 +928,7 @@ function deltxtinN(id){
   var DXN =teamN.indexOf($('.ckN' + id).text());
   
   if ( $('#alltext14').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckN' + id).text());
+    data.unshift($('.ckN' + id).text());
     teamN.splice(DXN, 1);
    console.log("teamN:"+teamN);
    console.log("data:" + data);
@@ -892,7 +942,7 @@ function deltxtinO(id){
   var DXO =teamO.indexOf($('.ckO' + id).text());
   
   if ( $('#alltext15').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckO' + id).text());
+    data.unshift($('.ckO' + id).text());
     teamO.splice(DXO, 1);
    console.log("teamO:"+teamO);
    console.log("data:" + data);
@@ -905,7 +955,7 @@ function deltxtinO2(id){
   var DXO2 =teamO2.indexOf($('.ckO2' + id).text());
   
   if ( $('#alltext152').css('background-color') == 'rgb(100, 149, 237)' ){
-    data.push($('.ckO2' + id).text());
+    data.unshift($('.ckO2' + id).text());
     teamO2.splice(DXO2, 1);
    console.log("teamO2:"+teamO2);
    console.log("data:" + data);
@@ -1000,71 +1050,71 @@ window.addEventListener('click', function(e){
     $('.box').css("background-color","rgb(128, 255, 212)");
     $('#alltext152').css("background-color","rgb(100, 149, 237)")
   }
-  else if (e.target.id != 'alltext1' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext1' && e.target.id != 'word' &&e.target.id != 'text'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext2' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext2' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext3' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext3' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext32' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext32' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext4' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext4' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext5' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext5' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext6' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext6' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext62' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext62' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext7' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext7' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext8' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext8' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext9' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext9' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext92' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext92' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext10' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext10' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext11' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext11' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext12' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext12' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext122' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext122' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext13' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext13' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext14' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext14' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext15' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext15' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
-  else if (e.target.id != 'alltext152' && e.target.id != 'textid'){
+  else if (e.target.id != 'alltext152' && e.target.id != 'word'){
     $('.box').css("background-color","rgb(128, 255, 212)")
   }
  });
 
   function shownumber (){
     var datanumber = data.length;
-    document.getElementById("people").innerHTML = "人數:" + datanumber + "/86";
+    document.getElementById("people").innerHTML = "人數:" + datanumber + "/86" ;
   }
 showname();
 shownumber();
