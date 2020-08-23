@@ -10,14 +10,22 @@
 </style>
 </head>
 <body>
-    <div id="app">
-
-
-
-        <div class="box">
-            {{message}}
-            {{message}}
-        </div>
+    
+    <div class="app">
+            <input type="text" placeholder="請輸入" @keyup.enter = "addTodo(newTodo)"
+            v-model="newTodo">
+            <h2>列表</h2>
+  
+        <ul>
+            <li v-for = "todo in todos" v-bind:class="{active: todo.completed}">
+                <input type="checkbox" v-model="todo.completed">
+            {{todo.content}}
+            -<a href="#" @click.prevent="removeTodo(todo)">刪除</a>
+        </li>
+    </ul>
+        <pre>
+            {{this.todos}}
+            </pre>
     </div>
    
     
@@ -27,11 +35,20 @@
 
     <script type="text/javascript">
         var app =new Vue({
-            el:'#app',
+            el:'.app',
             data:{
-                message: 'hello world!!'
+              todos:[],
+              newTodo:''
+            },
+            methods:{
+                addTodo:function(todo){
+                  this.todos.push({content:todo,completed:false})
+                },
+                removeTodo:function(todo){
+                    this.todos.splice(this.todos.indexOf(todo),1);
+                }
             }
-        });
+        })
     </script>
 </body>
 </html>
