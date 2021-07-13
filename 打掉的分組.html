@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css.css">
+    <title>公會分組</title>
+</head>
+<body>
+    <div class="left col-md-9" id="left">
+       
+            <p id="people">人數:</p>
+            <div class="search-box">
+                搜尋：<input type="search" class="light-table-filter" id="word" data-table="order-table" placeholder="請輸入關鍵字">
+            </div>
+            <div class="row">
+            <table class="order-table">
+                <tbody id="text">
+          
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row col-md-12">
+            <box class="col-ms-3 box1">
+                <div class="text" contenteditable="true">攻堅組1</div>
+                <div class="group kle1" id="alltext1"></div>
+            </box>
+            <box class="col-ms-3 box2">
+                <div class="text" contenteditable="true">攻堅組2</div>
+                <div class="group kle2" id="alltext2"></div>
+            </box>
+            <box class="col-ms-3 box3">
+                <div class="text" contenteditable="true">攻堅組3</div>
+                <div class="group kle3" id="alltext3"></div>
+            </box>
+            <box class="col-ms-3 box4">
+                <div class="text" contenteditable="true">攻堅組4</div>
+                <div class="group kle4" id="alltext4"></div>
+            </box>
+            <box class="col-ms-3 box5">
+                <div class="text" contenteditable="true">攻堅組5</div>
+                <div class="group kle5" id="alltext5"></div>
+            </box>
+            <box class="col-ms-3 box6">
+                <div class="text" contenteditable="true">攻堅組6</div>
+                <div class="group kle6" id="alltext6"></div>
+            </box>
+            <box class="col-ms-3 box7">
+                <div class="text" contenteditable="true">萌新隊-路口A</div>
+                <div class="group kle7" id="alltext7"></div>
+            </box>
+            <box class="col-ms-3 box8">
+                <div class="text" contenteditable="true">萌新隊-路口B</div>
+                <div class="group kle8" id="alltext8"></div>
+            </box>
+            <box class="col-ms-3 box9">
+                <div class="text" contenteditable="true">特殊-浣熊空降部隊</div>
+                <div class="group kle9" id="alltext9"></div>
+            </box>
+            <box class="col-ms-3 box10">
+                <div class="text" contenteditable="true">守門員1</div>
+                <div class="group kle10" id="alltext10"></div>
+            </box>
+            <box class="col-ms-3 box11">
+                <div class="text" contenteditable="true">守門員2</div>
+                <div class="group kle11" id="alltext11"></div>
+            </box>
+            <box class="col-ms-3 box12">
+                <div class="text" contenteditable="true">守門員3</div>
+                <div class="group kle12" id="alltext12"></div>
+            </box>    
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+    var data=["塔可","玥珞淺淺","無極_Remix","只是塊木頭","上善弱水","紫悅","銅鑼燒","月夢","假色肥","阿打打打","誅仙","綠頭鴨_1","十月瀟湘儘放梅","Recycle言葉","Spirito口o","寶咖咖配奶茶","SHEEY","柯胖","DaGoGo","喵星","sprite_4","二次元的天空","葬儀鴛","貓公子","小滴咑","chenyo","萌玥","十闇部十","祈許回憶","性感屁股","笨撚柒","狂月巴","Melody希","齊貝林","UC","QQWC","榕樹下的歲月","Ckkkh","艾茵","未知料理","耀犧","蓋倫","笙雷","豬餅妹","Cazy","Eji","AK冒險團","小克瑞爾","XPASE","遊戲人間之迷失","爆石武次子","機巴拉","骸梅十穗","柳柳柳","全村的希望","吉米不吃米","海藍時見鯨","七彩吉祥物","純白之劍","Devi1","Perry","賊塔嘻嘻","Black芊","殤離墨","对母鸡","嘎洽","夏羽","月型","Pui天竺鼠車車","克依蘿絲","Rogan","蒼響","梓樾","EternalReturn","伊米","泱染","大給給","骨畫師","阿米","釀子","我叫你寒","心結焦糖","Withered","chyss332","你說得對呀","萝莉快到碗裡來"];
+    var team1 =[];
+    var team2 =[];
+    var team3 =[];
+    var team4 =[];
+    var team5 =[];
+    var team6 =[];
+    var team7 =[];
+    var team8 =[];
+    var team9 =[];
+    var team10 =[];
+    var team11 =[];
+    var team12 =[];
+
+    (function(document) {
+  
+
+  // 建立 LightTableFilter
+  var LightTableFilter = (function(Arr) {
+
+    var _input;
+
+    // 資料輸入事件處理函數
+    function _onInputEvent(e) {
+      _input = e.target;
+      var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+      Arr.forEach.call(tables, function(table) {
+        Arr.forEach.call(table.tBodies, function(tbody) {
+          Arr.forEach.call(tbody.rows, _filter);
+        });
+      });
+    }
+
+    // 資料篩選函數，顯示包含關鍵字的列，其餘隱藏
+    function _filter(row) {
+      var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+      row.style.display = text.indexOf(val) === -1 ? 'none' : 'table';
+    }
+
+    return {
+      // 初始化函數
+      init: function() {
+        var inputs = document.getElementsByClassName('light-table-filter');
+        Arr.forEach.call(inputs, function(input) {
+          input.oninput = _onInputEvent;
+        });
+      }
+    };
+  })(Array.prototype);
+
+  // 網頁載入完成後，啟動 LightTableFilter
+  document.addEventListener('readystatechange', function() {
+    if (document.readyState === 'complete') {
+      LightTableFilter.init();
+    }
+  });
+
+})(document);
+//顯示所有成員名字
+function showname(){
+  var len;
+  var text = "";
+  for(len = 0; len < data.length; len++)
+  {
+    text +=`<tr   onclick="deltxt(${len})">
+            <td id = "word"><div class = "ck${len}"  id="left">${data[len]}</div></td>
+            </tr>`;
+  }
+document.getElementById("text").innerHTML = text;
+}
+//顯示人數
+function shownumber()
+    {
+        var datanumber = data.length;
+        document.getElementById("people").innerHTML = "人數:" + datanumber + "/86" ;
+    }
+
+   
+
+
+for(let i = 0; i<13;i++){
+window.addEventListener('click', function(e){
+  //點擊變換顏色事件(coonsole.log會跳NULL  由於ID不是固定的 contains抓不到)
+  if (document.getElementById("alltext"+i+"").contains(e.target)){
+    $('.group').css("background-color","rgb(128, 255, 212)");
+        $(".kle"+i+"").css("background-color","rgb(100, 149, 237)"); 
+    
+}
+else if (e.target.id != "alltext"+i+"" && e.target.id != 'left' && e.target.id != 'word'){
+    $(".kle"+i+"").css("background-color","rgb(128, 255, 212)")
+  }
+})
+}
+function shownameteam1(){  
+  var text = "";
+  for(var len = 0; len < team1.length; len++)
+  {
+    text +=`<li class = "ckA${len}" id="word"   onclick="deltxtinA(${len})">${team1[len]}</li>`;
+  } 
+  document.getElementById("alltext1").innerHTML = text;
+}
+function shownameteam2(){  
+  var text = "";
+  for(var len = 0; len < team2.length; len++)
+  {
+    text +=`<li class = "ckB${len}"   id="word"  onclick="deltxtinB(${len})">${team2[len]}</li>`;
+  } 
+  document.getElementById("alltext2").innerHTML = text;
+}
+function shownameteam3(){  
+  var text = "";
+  for(var len = 0; len < team3.length; len++)
+  {
+    text +=`<li class = "ckC${len}"  id = "word"  onclick="deltxtinC(${len})">${team3[len]}</li>`;
+  } 
+  document.getElementById("alltext3").innerHTML = text;
+}
+function shownameteam4(){  
+  var text = "";
+  for(var len = 0; len < team4.length; len++)
+  {
+    text +=`<li class = "ckD${len}"  id = "word"  onclick="deltxtinD(${len})">${team4[len]}</li>`;
+  } 
+  document.getElementById("alltext4").innerHTML = text;
+}
+function shownameteam5(){  
+  var text = "";
+  for(var len = 0; len < team5.length; len++)
+  {
+    text +=`<li class = "ckE${len}"  id = "word"  onclick="deltxtinE(${len})">${team5[len]}</li>`;
+  } 
+  document.getElementById("alltext5").innerHTML = text;
+}
+function shownameteam6(){  
+  var text = "";
+  for(var len = 0; len < team6.length; len++)
+  {
+    text +=`<li class = "ckF${len}"  id = "word"  onclick="deltxtinF(${len})">${team6[len]}</li>`;
+  } 
+  document.getElementById("alltext6").innerHTML = text;
+}
+function shownameteam7(){  
+  var text = "";
+  for(var len = 0; len < team7.length; len++)
+  {
+    text +=`<li class = "ckG${len}"  id = "word"  onclick="deltxtinG(${len})">${team7[len]}</li>`;
+  } 
+  document.getElementById("alltext7").innerHTML = text;
+}
+function shownameteam8(){  
+  var text = "";
+  for(var len = 0; len < team8.length; len++)
+  {
+    text +=`<li class = "ckH${len}"  id = "word"  onclick="deltxtinH(${len})">${team8[len]}</li>`;
+  } 
+  document.getElementById("alltext8").innerHTML = text;
+}
+function shownameteam9(){  
+  var text = "";
+  for(var len = 0; len < team9.length; len++)
+  {
+    text +=`<li class = "ckI${len}"  id = "word"  onclick="deltxtinI(${len})">${team9[len]}</li>`;
+  } 
+  document.getElementById("alltext9").innerHTML = text;
+}
+function shownameteam10(){  
+  var text = "";
+  for(var len = 0; len < team10.length; len++)
+  {
+    text +=`<li class = "ckJ${len}"  id = "word"  onclick="deltxtinJ(${len})">${team10[len]}</li>`;
+  } 
+  document.getElementById("alltext10").innerHTML = text;
+}
+function shownameteam11(){  
+  var text = "";
+  for(var len = 0; len < team11.length; len++)
+  {
+    text +=`<li class = "ckK${len}"  id = "word"  onclick="deltxtinK(${len})">${team11[len]}</li>`;
+  } 
+  document.getElementById("alltext11").innerHTML = text;
+}
+function shownameteam12(){  
+  var text = "";
+  for(var len = 0; len < team12.length; len++)
+  {
+    text +=`<li class = "ckL${len}"  id = "word"  onclick="deltxtinL(${len})">${team12[len]}</li>`;
+  } 
+  document.getElementById("alltext12").innerHTML = text;
+}
+
+
+function deltxt(id){
+  var DX2 =data.indexOf($('.ck' + id).text());
+      if( $('.kle1').css("background-color") == 'rgb(100, 149, 237)')
+      {
+        if(team1.length<8 ){
+        team1.push($('.ck' + id).text());
+        data.splice(DX2, 1);
+        $(".ck" + id).remove(); 
+      
+        shownameteam1();
+        shownumber();
+      }
+      }
+      else  if(  $('.kle2').css("background-color") == 'rgb(100, 149, 237)')
+       {
+         if(team2.length<8){
+          team2.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam2()
+          shownumber();
+        }
+      }else if($('.kle3').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team3.length<8){
+          team3.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam3()
+          shownumber();
+        }
+      }else if( $('.kle4').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team4.length<8){
+          team4.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam4()
+          shownumber();
+        }
+      }else if($('.kle5').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team5.length<8){
+          team5.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam5()
+          shownumber();
+        }
+      }else if( $('.kle6').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team6.length<8){
+          team6.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam6()
+          shownumber();
+        }
+      }else if( $('.kle7').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team7.length<8){
+          team7.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam7()
+          shownumber();
+        }
+      }else if( $('.kle8').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team8.length<8){
+          team8.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam8()
+          shownumber();
+        }
+      }else if( $('.kle9').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team9.length<8){
+          team9.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam9()
+          shownumber();
+        }
+      }else if( $('.kle10').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team10.length<8){
+          team10.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam10()
+          shownumber();
+        }
+      }else if( $('.kle11').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team11.length<8){
+          team11.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam11()
+          shownumber();
+        }
+      }else if( $('.kle12').css("background-color") == 'rgb(100, 149, 237)'){
+        if(team12.length<8){
+          team12.push($('.ck' + id).text());
+          
+          data.splice(DX2, 1);
+          
+          $(".ck" + id).remove(); 
+          shownameteam12()
+          shownumber();
+        }
+      }
+}
+function deltxtinA(id)
+{
+  var DXA =team1.indexOf($(".ckA"+id+"").text());
+  if ( $('#alltext1').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckA"+id+"").text());
+        team1.splice(DXA, 1);
+        console.log("data:" + data);
+        $(".ckA"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinB(id)
+{
+  var DXB =team2.indexOf($(".ckB"+id+"").text());
+  if ( $('#alltext2').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckB"+id+"").text());
+        team2.splice(DXB, 1);
+       
+        console.log("data:" + data);
+        $(".ckB"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinC(id)
+{
+  var DXC =team3.indexOf($(".ckC"+id+"").text());
+  if ( $('#alltext3').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckC"+id+"").text());
+        team3.splice(DXC, 1);
+       
+        console.log("data:" + data);
+        $(".ckC"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinD(id)
+{
+  var DXD =team4.indexOf($(".ckD"+id+"").text());
+  if ( $('#alltext4').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckD"+id+"").text());
+        team4.splice(DXD, 1);
+       
+        console.log("data:" + data);
+        $(".ckD"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinE(id)
+{
+  var DXE =team5.indexOf($(".ckE"+id+"").text());
+  if ( $('#alltext5').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckE"+id+"").text());
+        team5.splice(DXE, 1);
+       
+        console.log("data:" + data);
+        $(".ckE"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinF(id)
+{
+  var DXF =team6.indexOf($(".ckF"+id+"").text());
+  if ( $('#alltext6').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckF"+id+"").text());
+        team6.splice(DXF, 1);
+       
+        console.log("data:" + data);
+        $(".ckF"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinG(id)
+{
+  var DXG =team7.indexOf($(".ckG"+id+"").text());
+  if ( $('#alltext7').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckG"+id+"").text());
+        team7.splice(DXG, 1);
+       
+        console.log("data:" + data);
+        $(".ckG"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinH(id)
+{
+  var DXH =team8.indexOf($(".ckH"+id+"").text());
+  if ( $('#alltext8').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckH"+id+"").text());
+        team8.splice(DXH, 1);
+       
+        console.log("data:" + data);
+        $(".ckH"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinI(id)
+{
+  var DXI =team9.indexOf($(".ckI"+id+"").text());
+  if ( $('#alltext9').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckI"+id+"").text());
+        team9.splice(DXI, 1);
+       
+        console.log("data:" + data);
+        $(".ckI"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinJ(id)
+{
+  var DXJ =team10.indexOf($(".ckJ"+id+"").text());
+  if ( $('#alltext10').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckJ"+id+"").text());
+        team10.splice(DXJ, 1);
+       
+        console.log("data:" + data);
+        $(".ckJ"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinK(id)
+{
+  var DXK =team11.indexOf($(".ckK"+id+"").text());
+  if ( $('#alltext11').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckK"+id+"").text());
+        team11.splice(DXK, 1);
+       
+        console.log("data:" + data);
+        $(".ckK"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+function deltxtinL(id)
+{
+  var DXL =team12.indexOf($(".ckL"+id+"").text());
+  if ( $('#alltext12').css('background-color') == 'rgb(100, 149, 237)' )
+      {
+        data.unshift($(".ckL"+id+"").text());
+        team12.splice(DXL, 1);
+       
+        console.log("data:" + data);
+        $(".ckL"+id+"").remove(); 
+      }
+  showname();
+  shownumber();
+}
+
+showname(); 
+shownumber();
+</script>
+</body> 
+</html>
