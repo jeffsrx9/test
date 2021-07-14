@@ -79,7 +79,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 
-    var data=["塔可","玥珞淺淺","無極_Remix","只是塊木頭","上善弱水","紫悅","銅鑼燒","月夢","假色肥","阿打打打","誅仙","綠頭鴨_1","十月瀟湘儘放梅","Recycle言葉","Spirito口o","寶咖咖配奶茶","SHEEY","柯胖","DaGoGo","喵星","sprite_4","二次元的天空","葬儀鴛","貓公子","小滴咑","chenyo","萌玥","十闇部十","祈許回憶","性感屁股","笨撚柒","狂月巴","Melody希","齊貝林","UC","QQWC","榕樹下的歲月","Ckkkh","艾茵","未知料理","耀犧","蓋倫","笙雷","豬餅妹","Cazy","Eji","AK冒險團","小克瑞爾","XPASE","遊戲人間之迷失","爆石武次子","機巴拉","骸梅十穗","柳柳柳","全村的希望","吉米不吃米","海藍時見鯨","七彩吉祥物","純白之劍","Devi1","Perry","賊塔嘻嘻","Black芊","殤離墨","对母鸡","嘎洽","夏羽","月型","Pui天竺鼠車車","克依蘿絲","Rogan","蒼響","梓樾","EternalReturn","伊米","泱染","大給給","骨畫師","阿米","釀子","我叫你寒","心結焦糖","Withered","chyss332","你說得對呀","萝莉快到碗裡來"];
+    var data=["塔可","只是塊木頭","上善弱水","紫悅","銅鑼燒","月夢","假色肥","阿打打打","誅仙","綠頭鴨_1","Recycle言葉","寶咖咖配奶茶","SHEEY","柯胖","DaGoGo","sprite_4","小滴咑","萌玥","十闇部十","祈許回憶","性感屁股","笨撚柒","狂月巴","Melody希","齊貝林","UC","QQWC","榕樹下的歲月","Ckkkh","艾茵","未知料理","耀犧","蓋倫","笙雷","豬餅妹","Cazy","Eji","AK冒險團","小克瑞爾","XPASE","遊戲人間之迷失","爆石武次子","機巴拉","骸梅十穗","柳柳柳","全村的希望","海藍時見鯨","七彩吉祥物","純白之劍","Devi1","Perry","賊塔嘻嘻","Black芊","对母鸡","嘎洽","夏羽","月型","Pui天竺鼠車車","克依蘿絲","Rogan","蒼響","EternalReturn","伊米","泱染","大給給","骨畫師","我叫你寒","你說得對呀","萝莉快到碗裡來"];
     var team1 =[];
     var team2 =[];
     var team3 =[];
@@ -163,12 +163,12 @@ for(let i = 0; i<13;i++){
 window.addEventListener('click', function(e){
   //點擊變換顏色事件(coonsole.log會跳NULL  由於ID不是固定的 contains抓不到)
   if (document.getElementById("alltext"+i+"").contains(e.target)){
-    $('.group').css("background-color","rgb(128, 255, 212)");
+    $('.group').css("background-color","rgb(96, 219, 178)");
         $(".kle"+i+"").css("background-color","rgb(100, 149, 237)"); 
     
 }
 else if (e.target.id != "alltext"+i+"" && e.target.id != 'left' && e.target.id != 'word'){
-    $(".kle"+i+"").css("background-color","rgb(128, 255, 212)")
+    $(".kle"+i+"").css("background-color","rgb(96, 219, 178)")
   }
 })
 }
