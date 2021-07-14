@@ -6,7 +6,7 @@ body{
     background-color:#fdf0de;
 }
 .left{
-    background-color: rgb(34, 194, 61);
+    background-color: rgb(128, 255, 212);
     color: black;
     position: fixed;
     top: 0;
@@ -76,10 +76,10 @@ tbody {
    text-align: center;
 }
 
-li:nth-child(odd) {background-color:rgb(34, 194, 61);}
-li:nth-child(even) {background-color:rgb(96, 219, 178)} 
-tr:nth-child(even) {background-color:rgb(34, 194, 61)} 
-tr:nth-child(odd) {background-color:rgb(155, 211, 107)} 
+li:nth-child(odd) {background-color:rgb(128, 255, 212);}
+li:nth-child(even) {background-color:#fdf0de} 
+tr:nth-child(even) {background-color:rgb(128, 255, 212)} 
+tr:nth-child(odd) {background-color:#fff6e9} 
 
 .check-box{
     display: flex;
