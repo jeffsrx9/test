@@ -77,7 +77,7 @@ tbody {
 }
 
 li:nth-child(odd) {background-color:rgb(34, 194, 61);}
-li:nth-child(even) {background-color:rgb(106, 182, 40)} 
+li:nth-child(even) {background-color:rgb(96, 219, 178)} 
 tr:nth-child(even) {background-color:rgb(34, 194, 61)} 
 tr:nth-child(odd) {background-color:rgb(155, 211, 107)} 
 
