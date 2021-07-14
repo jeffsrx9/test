@@ -51,7 +51,9 @@ body{
 }
 .text{
     text-align: center;
-   
+   width: 300px;
+   font-weight: 900;
+   font-size: 24px;
 }
 .row box{
     width: 300px;
